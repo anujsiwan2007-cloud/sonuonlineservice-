@@ -13,7 +13,6 @@
         :root {
             --primary-color: #0b5ed7;
             --secondary-color: #0a58ca;
-            --whatsapp-color: #25D366;
             --dark-color: #212529;
             --light-bg: #f8f9fa;
             --white: #ffffff;
@@ -72,12 +71,12 @@
             font-weight: 400;
         }
 
-        .btn-header-wa {
+        .btn-portal-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background-color: var(--whatsapp-color);
-            color: var(--white);
+            background-color: #ffc107;
+            color: #000;
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 20px;
@@ -86,8 +85,8 @@
             transition: background 0.3s ease;
         }
 
-        .btn-header-wa:hover {
-            background-color: #1eb956;
+        .btn-portal-link:hover {
+            background-color: #e0a800;
         }
 
         /* Hero Banner */
@@ -208,12 +207,12 @@
             margin-bottom: 20px;
         }
 
-        .btn-apply {
+        .btn-official {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background-color: var(--whatsapp-color);
+            background-color: var(--primary-color);
             color: var(--white);
             text-decoration: none;
             padding: 10px 18px;
@@ -223,8 +222,8 @@
             transition: background 0.3s ease;
         }
 
-        .btn-apply:hover {
-            background-color: #1eb956;
+        .btn-official:hover {
+            background-color: var(--secondary-color);
         }
 
         /* Address Banner */
@@ -242,30 +241,6 @@
         .location-info i {
             font-size: 32px;
             color: var(--primary-color);
-        }
-
-        /* Floating WhatsApp Button (No Number Visible) */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--whatsapp-color);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
         }
 
         /* Footer */
@@ -306,16 +281,16 @@
                 <span>Goreakothi Digital Point</span>
             </div>
         </div>
-        <a href="https://wa.me/918227002020?text=Namaste%20Sonu%20Cyber,%20mujhe%20online%20service%20chahiye." target="_blank" class="btn-header-wa">
-            <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i>
-            <span>Contact</span>
+        <a href="https://sarkariresult.com" target="_blank" class="btn-portal-link">
+            <i class="fa-solid fa-globe"></i>
+            <span>Govt Portal</span>
         </a>
     </header>
 
     <!-- Hero Banner -->
     <section class="hero">
         <h2>Sonu Cyber Goreakothi</h2>
-        <p>Aapke sabhi digital aur online sarkari kaam ek hi jagah par aasan aur tezi se kiye jaate hain.</p>
+        <p>Aapke sabhi digital aur online sarkari kaam ke official portals ki jankari aur link.</p>
         
         <div class="search-container">
             <input type="text" id="searchInput" onkeyup="filterServices()" placeholder="Koyi bhi service search karein (e.g. Aadhar, Pan, Form)...">
@@ -325,104 +300,104 @@
     <!-- Main Content -->
     <main class="container">
         <div class="section-title">
-            <h3>Hamari Digital Services</h3>
+            <h3>Official Digital Portals</h3>
         </div>
 
         <div class="services-grid" id="servicesGrid">
             
-            <!-- Service Item 1 -->
+            <!-- Service Item 1: UIDAI Aadhar Portal -->
             <div class="service-card">
                 <div>
                     <div class="service-icon"><i class="fa-solid fa-id-card"></i></div>
-                    <h4>Aadhar Card Services</h4>
-                    <p>Aadhar download, print, address update, aur PVC card order.</p>
+                    <h4>Aadhar Card Portal</h4>
+                    <p>UIDAI Official Portal: Download Aadhar, Status Check, PVC Card Order.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=Aadhar%20Card%20Service%20chahiye" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://myaadhaar.uidai.gov.in" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> UIDAI Portal Open
                 </a>
             </div>
 
-            <!-- Service Item 2 -->
+            <!-- Service Item 2: PAN Card Portal -->
             <div class="service-card">
                 <div>
                     <div class="service-icon"><i class="fa-solid fa-address-card"></i></div>
-                    <h4>PAN Card Apply</h4>
-                    <p>Naya Pan Card apply karein, correction aur instant e-PAN banwayein.</p>
+                    <h4>PAN Card Portal</h4>
+                    <p>NSDL / UTIITSL Portal: Naya PAN apply karein aur correction karein.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=PAN%20Card%20Apply%20karna%20hai" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> NSDL PAN Portal
                 </a>
             </div>
 
-            <!-- Service Item 3 -->
+            <!-- Service Item 3: Voter ID Portal -->
             <div class="service-card">
                 <div>
                     <div class="service-icon"><i class="fa-solid fa-check-to-slot"></i></div>
-                    <h4>Voter ID Card</h4>
-                    <p>Naya Voter ID card apply karein, correction aur PVC card download.</p>
+                    <h4>Voter Service Portal</h4>
+                    <p>Voters Service Portal: Naya Voter ID card aur Correction Portal.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=Voter%20ID%20Card%20kaam%20hai" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://voters.eci.gov.in" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Voter Portal Open
                 </a>
             </div>
 
-            <!-- Service Item 4 -->
+            <!-- Service Item 4: Sarkari Jobs Portal -->
             <div class="service-card">
                 <div>
                     <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h4>Online Job Form</h4>
-                    <p>Sarkari naukri, SSC, Railway, Banking aur police form bharein.</p>
+                    <h4>Sarkari Result Portal</h4>
+                    <p>Sabhi Sarkari Naukri, Admit Card aur Result portal link.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=Online%20Form%20bharna%20hai" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://www.sarkariresult.com" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Sarkari Result Open
                 </a>
             </div>
 
-            <!-- Service Item 5 -->
+            <!-- Service Item 5: Bihar Scholarship Portal -->
             <div class="service-card">
                 <div>
                     <div class="service-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                    <h4>Scholarship Form</h4>
-                    <p>Post Matric, PMS Bihar aur sabhi prakar ke scholarship forms.</p>
+                    <h4>Medhasoft Scholarship</h4>
+                    <p>Bihar PMS & Medhasoft Scholarship Portal for Students.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=Scholarship%20Form%20bharna%20hai" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://pmsonline.bih.nic.in" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Scholarship Portal
                 </a>
             </div>
 
-            <!-- Service Item 6 -->
+            <!-- Service Item 6: RTPS Bihar (Jati, Aaya, Niwas) -->
             <div class="service-card">
                 <div>
-                    <div class="service-icon"><i class="fa-solid fa-wheat-awn"></i></div>
-                    <h4>Ration Card & Caste/Income</h4>
-                    <p>Ration card apply, Jati, Aaya, aur Niwas praman patra banwayein.</p>
+                    <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h4>RTPS Bihar (Jati/Aaya/Niwas)</h4>
+                    <p>ServicePlus Bihar: Jati, Aaya, Niwas, LPC & Ration Card Services.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=Jati/Aaya/Niwas/Ration%20Card%20kaam%20hai" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://serviceonline.bihar.gov.in" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> RTPS Bihar Open
                 </a>
             </div>
 
-            <!-- Service Item 7 -->
+            <!-- Service Item 7: EPFO Pension & PF Portal -->
             <div class="service-card">
                 <div>
                     <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                    <h4>Pension & PF Service</h4>
-                    <p>Vridha pension application aur EPF withdrawal & KYC.</p>
+                    <h4>EPFO Unified Portal</h4>
+                    <p>Member Passbook, Pension, EPF Balance & Claim Portal.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=Pension%20/%20PF%20kaam%20hai" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> EPFO Portal Open
                 </a>
             </div>
 
-            <!-- Service Item 8 -->
+            <!-- Service Item 8: Driving License Portal -->
             <div class="service-card">
                 <div>
-                    <div class="service-icon"><i class="fa-solid fa-print"></i></div>
-                    <h4>Print & Photo Service</h4>
-                    <p>Color print, Xerox, Lamination aur Passport size photo Service.</p>
+                    <div class="service-icon"><i class="fa-solid fa-id-badge"></i></div>
+                    <h4>Parivahan Sewa</h4>
+                    <p>Driving License, Learner License & Vehicle Registration Portal.</p>
                 </div>
-                <a href="https://wa.me/918227002020?text=Printout%20/%20Photo%20Service" target="_blank" class="btn-apply">
-                    <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                <a href="https://parivahan.gov.in" target="_blank" class="btn-official">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Parivahan Portal
                 </a>
             </div>
 
@@ -439,11 +414,6 @@
             </div>
         </div>
     </main>
-
-    <!-- Floating WhatsApp Action Button -->
-    <a href="https://wa.me/918227002020?text=Namaste%20Sonu%20Cyber,%20mujhe%20service%20chahiye." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
 
     <!-- Footer -->
     <footer>
