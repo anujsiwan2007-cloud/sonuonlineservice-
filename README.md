@@ -1,401 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonu Cyber Goreakothi - Digital Service Portal</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        :root {
-            --primary: #1e3c72;
-            --secondary: #2a5298;
-            --accent: #ff9800;
-            --light-bg: #f4f7f6;
-            --dark: #333333;
-            --card-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
+<title>Sonu Digital Service</title>
 
-        body {
-            background-color: var(--light-bg);
-            color: var(--dark);
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        /* Top Bar */
-        .top-bar {
-            background: var(--dark);
-            color: #ffffff;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
+body{
+    background:linear-gradient(135deg,#eef2ff,#fdf2f8,#ecfeff);
+    color:#172033;
+}
 
-        .top-bar i {
-            margin-right: 5px;
-            color: var(--accent);
-        }
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#4f46e5,#7c3aed,#db2777);
+    color:white;
+    padding:25px 15px;
+    text-align:center;
+    box-shadow:0 5px 20px #0003;
+}
 
-        /* Navigation Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
+header h1{
+    font-size:30px;
+    font-weight:800;
+}
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+header p{
+    margin-top:7px;
+    font-size:14px;
+}
 
-        .logo-container i {
-            font-size: 32px;
-            color: var(--accent);
-        }
+/* NAVIGATION */
+nav{
+    background:white;
+    padding:12px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 3px 12px #0002;
+}
 
-        .logo-text h1 {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
+nav a{
+    text-decoration:none;
+    color:#4f46e5;
+    font-weight:bold;
+    padding:9px 15px;
+    border-radius:20px;
+}
 
-        .logo-text p {
-            font-size: 12px;
-            color: #d0e1fd;
-        }
+nav a:hover{
+    background:#4f46e5;
+    color:white;
+}
 
-        /* Banner Hero Section */
-        .hero {
-            background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80') center/cover;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-        }
+/* HERO */
+.hero{
+    margin:20px auto;
+    max-width:1100px;
+    padding:35px 20px;
+    border-radius:25px;
+    text-align:center;
+    background:linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed);
+    color:white;
+    box-shadow:0 10px 30px #0003;
+}
 
-        .hero h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+.hero h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
 
-        .hero p {
-            font-size: 15px;
-            margin-bottom: 25px;
-            color: #e0e6ed;
-        }
+.hero p{
+    font-size:15px;
+}
 
-        /* Search Input Box */
-        .search-box {
-            max-width: 550px;
-            margin: 0 auto;
-            position: relative;
-        }
+/* SECTION */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:10px 15px 40px;
+}
 
-        .search-box input {
-            width: 100%;
-            padding: 14px 20px 14px 45px;
-            border-radius: 30px;
-            border: none;
-            outline: none;
-            font-size: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
+.section-title{
+    margin:30px 0 15px;
+    font-size:23px;
+    font-weight:800;
+}
 
-        .search-box i {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #777;
-            font-size: 16px;
-        }
+/* SERVICE GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
 
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 35px auto;
-            padding: 0 20px;
-        }
+/* CARD */
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 7px 20px #0002;
+    border:1px solid #ffffff;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 30px #0003;
+}
 
-        .section-header h3 {
-            font-size: 24px;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 8px;
-        }
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#06b6d4,#6366f1,#ec4899);
+}
 
-        .section-header h3::after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 3px;
-            background: var(--accent);
-            bottom: 0;
-            left: 20%;
-            border-radius: 2px;
-        }
+.icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
 
-        /* Services Grid Layout */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.card h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
 
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            padding: 22px 18px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
-            border: 1px solid #e1e8ed;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.card p{
+    color:#64748b;
+    font-size:13px;
+    min-height:38px;
+}
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-        }
+.btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    margin-top:15px;
+    padding:11px;
+    border-radius:12px;
+    font-weight:bold;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+}
 
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: #eef4ff;
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            margin: 0 auto 15px;
-        }
+.btn:hover{
+    background:linear-gradient(135deg,#db2777,#ef4444);
+}
 
-        .service-card h4 {
-            font-size: 17px;
-            margin-bottom: 8px;
-            color: var(--dark);
-        }
+/* CONTACT */
+.contact{
+    margin-top:30px;
+    padding:25px;
+    border-radius:20px;
+    background:white;
+    text-align:center;
+    box-shadow:0 7px 20px #0002;
+}
 
-        .service-card p {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 18px;
-        }
+.contact a{
+    display:inline-block;
+    margin:8px;
+    padding:11px 18px;
+    border-radius:12px;
+    color:white;
+    background:#16a34a;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        .btn-link {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 9px 18px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
+/* FOOTER */
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px 10px;
+    margin-top:30px;
+}
 
-        .btn-link:hover {
-            background-color: var(--secondary);
-        }
+footer p{
+    margin:5px;
+    font-size:13px;
+}
 
-        /* Address Box Section */
-        .address-card {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--card-shadow);
-            margin: 40px 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-left: 5px solid var(--accent);
-        }
+/* MOBILE */
+@media(max-width:600px){
+    header h1{
+        font-size:23px;
+    }
 
-        .address-card i {
-            font-size: 32px;
-            color: var(--accent);
-        }
+    .hero h2{
+        font-size:22px;
+    }
 
-        .address-card h4 {
-            font-size: 18px;
-            color: var(--primary);
-        }
+    .grid{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
 
-        .address-card p {
-            font-size: 14px;
-            color: #555;
-        }
+    .card{
+        padding:15px;
+    }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: #aaaaaa;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 13px;
-        }
+    .icon{
+        font-size:30px;
+    }
 
-        footer strong {
-            color: #ffffff;
-        }
-
-        @media (max-width: 600px) {
-            .hero h2 {
-                font-size: 22px;
-            }
-            .logo-text h1 {
-                font-size: 16px;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 5px;
-                text-align: center;
-            }
-        }
-    </style>
+    .card h3{
+        font-size:15px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Top Announcement Bar -->
-    <div class="top-bar">
-        <div><i class="fa-solid fa-store"></i> Digital & Online Services Center</div>
-        <div><i class="fa-solid fa-location-dot"></i> Goreakothi, Siwan (Bihar)</div>
-    </div>
+<header>
+    <h1>🌐 SONU DIGITAL SERVICE</h1>
+    <p>Fast • Secure • Digital Online Services</p>
+</header>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo-container">
-            <i class="fa-solid fa-laptop-code"></i>
-            <div class="logo-text">
-                <h1>Sonu Cyber</h1>
-                <p>Goreakothi Online Services</p>
-            </div>
-        </div>
-    </header>
+<nav>
+    <a href="#home">🏠 Home</a>
+    <a href="#aadhaar">🪪 Aadhaar</a>
+    <a href="#pan">💳 PAN</a>
+    <a href="#gov">📄 Government</a>
+    <a href="#education">🎓 Education</a>
+    <a href="#printing">🖨️ Printing</a>
+    <a href="#contact">📞 Contact</a>
+</nav>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <h2>Sonu Cyber Goreakothi</h2>
-        <p>Sabhi prakar ke online va digital karya yahan kiye jaate hain.</p>
-        
-        <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" onkeyup="filterServices()" placeholder="Service search karein (e.g. Aadhar, PAN, Form, Voter)...">
-        </div>
-    </section>
+<section class="hero" id="home">
+    <h2>Digital Services At One Place</h2>
+    <p>Select any service below and open its dedicated official website.</p>
+</section>
 
-    <!-- Main Content Container -->
-    <main class="container">
-        <div class="section-header">
-            <h3>Hamari Digital Services</h3>
-        </div>
+<div class="container">
 
-        <div class="services-grid" id="servicesGrid">
-            
-            <!-- Service 1 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-id-card"></i></div>
-                    <h4>Aadhar Card Services</h4>
-                    <p>Aadhar download, PVC Card order aur Aadhar updates.</p>
-                </div>
-                <a href="https://myaadhaar.uidai.gov.in" target="_blank" class="btn-link">Open Official Link</a>
-            </div>
+<!-- AADHAAR -->
+<h2 class="section-title" id="aadhaar">🪪 Aadhaar Services</h2>
 
-            <!-- Service 2 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-address-card"></i></div>
-                    <h4>PAN Card Services</h4>
-                    <p>Naya PAN Card apply karein, correction aur e-PAN download.</p>
-                </div>
-                <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank" class="btn-link">Open Official Link</a>
-            </div>
+<div class="grid">
 
-            <!-- Service 3 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-check-to-slot"></i></div>
-                    <h4>Voter ID Services</h4>
-                    <p>Naya Voter Card apply karein, status check aur download.</p>
-                </div>
-                <a href="https://voters.eci.gov.in" target="_blank" class="btn-link">Open Official Link</a>
-            </div>
+<div class="card">
+<div class="icon">🆕</div>
+<h3>New Aadhaar</h3>
+<p>Aadhaar enrolment information</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
 
-            <!-- Service 4 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h4>Sarkari Online Form</h4>
-                    <p>Sabhi sarkari naukri, admit card aur result form online bharein.</p>
-                </div>
-                <a href="https://www.sarkariresult.com" target="_blank" class="btn-link">Open Official Link</a>
-            </div>
+<div class="card">
+<div class="icon">📥</div>
+<h3>Aadhaar Download</h3>
+<p>Download your e-Aadhaar</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
 
-            <!-- Service 5 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
-                    <h4>Scholarship Form</h4>
-                    <p>PMS Bihar, Medhasoft aur post matric scholarship form.</p>
-                </div>
-                <a href="https://pmsonline.bih.nic.in" target="_blank" class="btn-link">Open Official Link</a>
-            </div>
+<div class="card">
+<div class="icon">🔎</div>
+<h3>Aadhaar Status</h3>
+<p>Check Aadhaar enrolment/update status</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
 
-            <!-- Service 6 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-file-invoice"></i></div>
-                    <h4>RTPS Bihar Services</h4>
-                    <p>Jati, Aaya, Niwas praman patra aur Ration Card services.</p>
-                </div>
-                <a href="https://serviceonline.bihar.gov.in" target="_blank" class="btn-link">Open Official Link</a>
-            </div>
+<div class="card">
+<div class="icon">✏️</div>
+<h3>Aadhaar Update</h3>
+<p>Update Aadhaar details</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
 
-            <!-- Service 7 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
-                    <h4>EPFO & Pension Portal</h4>
-                    <p>PF withdrawal, EPFO passbook check, KYC aur pension form.</p>
-                </div>
-                <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" class="btn-link">Open Official Link</a>
-            </div>
+<div class="card">
+<div class="icon">💳</div>
+<h3>PVC Card</h3>
+<p>Order Aadhaar PVC card</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
 
-            <!-- Service 8 -->
-            <div class="service-card">
-                <div>
-                    <div class="icon-box"><i class="fa-solid fa-car-side"></i></div>
-                    <h4>Parivahan Services</h4>
-                    <p>Driving License, Learner License aur Vehicle Registration.</p>
-                </div>
-                <a href="
+<div class="card">
+<div class="icon">✅</div>
+<h3>Verify Aadhaar</h3>
+<p>Verify Aadhaar number</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">📅</div>
+<h3>Appointment</h3>
+<p>Book Aadhaar appointment</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+</div>
+
+
+<!-- PAN -->
+<h2 class="section-title" id="pan">💳 PAN Card Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🪪</div>
+<h3>New PAN</h3>
+<p>Apply for a new PAN card</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">✏️</div>
+<h3>PAN Correction</h3>
+<p>Update PAN details</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">📲</div>
+<h3>e-PAN</h3>
+<p>Access e-PAN related service</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">🔍</div>
+<h3>PAN Status</h3>
+<p>Check PAN application status</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+</div>
+
+
+<!-- GOVERNMENT -->
+<h2 class="section-title" id="gov">📄 Government Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🏛️</div>
+<h3>RTPS</h3>
+<p>Bihar online public services</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">📜</div>
+<h3>Caste Certificate</h3>
+<p>Apply/check caste certificate service</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">💰</div>
+<h3>Income Certificate</h3>
+<p>Income certificate service</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">🏠</div>
+<h3>Residence Certificate</h3>
+<p>Residence certificate service</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+</div>
+
+
+<!-- EDUCATION -->
+<h2 class="section-title" id="education">🎓 Education Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🎓</div>
+<h3>Scholarship</h3>
+<p>Scholarship application services</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">📝</div>
+<h3>Admission Form</h3>
+<p>Online admission services</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">📋</div>
+<h3>Exam Form</h3>
+<p>Online examination forms</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>Result</h3>
+<p>Check examination results</p>
+<a class="btn" href="OFFICIAL_LINK_HERE" target="_blank">Open Service ↗</a>
+</div>
+
+</div>
+
+
+<!-- PRINTING -->
+<h2 class="section-title" id="printing">🖨️ Printing Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📸</div>
+<h3>Photo</h3>
+<p>Passport size photo service</p>
+<a class="btn" href="#contact">Contact Us</a>
+</div>
+
+<div class="card">
+<div class="icon">🖨️</div>
+<h3>Print</h3>
+<p>Colour and black & white printing</p>
+<a class="btn" href="#contact">Contact Us</a>
+</div>
+
+<div class="card">
+<div class="icon">📄</div>
+<h3>Scan</h3>
+<p>Document scanning service</p>
+<a class="btn" href="#contact">Contact Us</a>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>Lamination</h3>
+<p>Document lamination service</p>
+<a class="btn" href="#contact">Contact Us</a>
+</div>
+
+</div>
+
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+<h2>📞 Contact sonu Digital Service</h2>
+<p>For online & offline digital services</p>
+
+<a href="tel:+918227002020">📞 Call Now</a>
+<a href="https://wa.me/918227002020" target="_blank">💬 WhatsApp</a>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 sonu Digital Service</p>
+<p>Fast • Secure • Reliable Digital Services</p>
+</footer>
+
+</body>
+</html>
