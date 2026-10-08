@@ -3,119 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सोनू साइबर</title>
+    <title>सोनू साइबर - ऑनलाइन सेवाएँ</title>
     <style>
         :root {
-            --primary: #ff9800;
-            --secondary: #253342;
-            --accent: #00e676;
-            --light: #f4f4f4;
-            --dark: #333;
+            --bg-color: #f0f2f5;
+            --primary-gradient: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+            --secondary-gradient: linear-gradient(135deg, #26A69A 0%, #00897B 100%);
+            --accent-gradient: linear-gradient(135deg, #29B6F6 0%, #039BE5 100%);
+            --fourth-gradient: linear-gradient(135deg, #AB47BC 0%, #8E24AA 100%);
+            --card-bg: #FFFFFF;
+            --text-color: #333333;
+            --white: #FFFFFF;
+            --shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
         header {
-            background-color: var(--secondary);
-            color: white;
-            padding: 20px 0;
+            background: #1e293b;
+            color: var(--white);
+            padding: 30px 20px;
             text-align: center;
+            box-shadow: var(--shadow);
+            border-bottom: 5px solid #FF9800;
         }
 
-        .contact-info {
-            font-size: 0.9em;
-            margin-top: 5px;
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        nav {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 0;
-            text-align: center;
+        header .address {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: #94a3b8;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin: 0 15px;
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        .dropbtn {
-            background-color: inherit;
-            color: white;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 250px;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
-        .dropdown-content a {
-            color: var(--dark);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: right;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        main {
-            padding: 20px;
+        .card-header {
+            padding: 40px 20px;
+            color: var(--white);
             text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-1 { background: var(--primary-gradient); }
+        .card-2 { background: var(--secondary-gradient); }
+        .card-3 { background: var(--accent-gradient); }
+        .card-4 { background: var(--fourth-gradient); }
+
+        .sub-menu {
+            display: none;
+            background: var(--white);
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .sub-menu.active {
+            display: flex;
+        }
+
+        .sub-menu a {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: background 0.2s ease, color 0.2s ease;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .sub-menu a:hover {
+            background: #FF9800;
+            color: var(--white);
+            border-color: #FF9800;
         }
 
         .whatsapp-btn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--accent);
-            color: var(--secondary);
-            padding: 15px 20px;
-            border-radius: 30px;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: var(--white);
+            padding: 20px 25px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-            font-size: 1.1em;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s ease;
+            z-index: 1000;
         }
 
-        .whatsapp-icon {
-            margin-right: 10px;
-            width: 24px;
-            height: 24px;
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .whatsapp-btn img {
+            width: 25px;
+            height: 25px;
         }
 
         footer {
-            background-color: var(--secondary);
-            color: white;
             text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 40px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .card { height: auto; }
         }
     </style>
 </head>
@@ -123,63 +167,77 @@
 
     <header>
         <h1>सोनू साइबर</h1>
-        <div class="contact-info">
-            कॉलेज रोड, गोरिया कोठी, सिवान, बिहार 841434
-        </div>
+        <div class="address">कॉलेज रोड, गोरिया कोठी, सिवान, बिहार 841434</div>
     </header>
 
-    <nav>
-        <div class="dropdown">
-            <button class="dropbtn">व्यक्तिगत पहचान</button>
-            <div class="dropdown-content">
-                <a href="#aadhar">आधार</a>
-                <a href="#pan">पैन कार्ड</a>
-                <a href="#voter">वोटर आईडी</a>
-                <a href="#passport">पासपोर्ट</a>
+    <div class="container">
+        <!-- Box 1 -->
+        <div class="card" onclick="toggleMenu(1)">
+            <div class="card-header card-1">व्यक्तिगत पहचान</div>
+            <div class="sub-menu" id="menu-1">
+                <a href="https://myaadhaar.uidai.gov.in/" target="_blank">आधार कार्ड डाउनलोड</a>
+                <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContactDetails.html" target="_blank">पैन कार्ड अप्लाई/सुधार</a>
+                <a href="https://voters.eci.gov.in/" target="_blank">वोटर आईडी</a>
+                <a href="https://www.passportindia.gov.in/" target="_blank">पासपोर्ट</a>
             </div>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">सरकारी प्रमाण पत्र</button>
-            <div class="dropdown-content">
-                <a href="#jati">जाति प्रमाण पत्र</a>
-                <a href="#aay">आय प्रमाण पत्र</a>
-                <a href="#niwas">निवास प्रमाण पत्र</a>
-                <a href="#ncl">NCL</a>
-                <a href="#ews">EWS</a>
-                <a href="#charitra">आचरण प्रमाण पत्र</a>
+        <!-- Box 2 -->
+        <div class="card" onclick="toggleMenu(2)">
+            <div class="card-header card-2">सरकारी प्रमाण पत्र</div>
+            <div class="sub-menu" id="menu-2">
+                <a href="https://serviceonline.gov.in/bihar/" target="_blank">जाति प्रमाण पत्र</a>
+                <a href="https://serviceonline.gov.in/bihar/" target="_blank">आय प्रमाण पत्र</a>
+                <a href="https://serviceonline.gov.in/bihar/" target="_blank">निवास प्रमाण पत्र</a>
+                <a href="https://serviceonline.gov.in/bihar/" target="_blank">NCL प्रमाण पत्र</a>
+                <a href="https://serviceonline.gov.in/bihar/" target="_blank">EWS प्रमाण पत्र</a>
+                <a href="https://serviceonline.gov.in/bihar/" target="_blank">आचरण प्रमाण पत्र</a>
             </div>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">शिक्षा और छात्रवृत्ति</button>
-            <div class="dropdown-content">
-                <a href="#school">स्कूल फॉर्म</a>
-                <a href="#scholarship">छात्रवृत्ति</a>
+        <!-- Box 3 -->
+        <div class="card" onclick="toggleMenu(3)">
+            <div class="card-header card-3">शिक्षा और छात्रवृत्ति</div>
+            <div class="sub-menu" id="menu-3">
+                <a href="https://medhasoft.bih.nic.in/" target="_blank">मेधासॉफ्ट (स्कूल)</a>
+                <a href="https://scholarships.gov.in/" target="_blank">नेशनल स्कॉलरशिप</a>
+                <a href="https://pmsonline.bih.nic.in/" target="_blank">पोस्ट मैट्रिक स्कॉलरशिप</a>
             </div>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">सरकारी नौकरियाँ</button>
-            <div class="dropdown-content">
-                <a href="#jobs">नौकरी के फॉर्म</a>
-                <a href="#results">सरकारी रिजल्ट</a>
+        <!-- Box 4 -->
+        <div class="card" onclick="toggleMenu(4)">
+            <div class="card-header card-4">सरकारी नौकरियाँ</div>
+            <div class="sub-menu" id="menu-4">
+                <a href="https://www.sarkariresult.com/" target="_blank">सरकारी रिजल्ट</a>
+                <a href="https://www.fastjobsearches.com/" target="_blank">फास्ट जॉब</a>
             </div>
         </div>
-    </nav>
-
-    <main>
-        <h2>ऑनलाइन सेवाओं के लिए हमसे संपर्क करें</h2>
-        <p>ऊपर दी गई किसी भी सेवा के लिए नीचे दिए गए बटन पर क्लिक करके मदद लें।</p>
-    </main>
+    </div>
 
     <a href="https://wa.me/918227002020?text=नमस्ते, मुझे मदद चाहिए।" class="whatsapp-btn" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         Get Help
     </a>
 
     <footer>
         <p>&copy; 2026 सोनू साइबर। सभी अधिकार सुरक्षित।</p>
     </footer>
+
+    <script>
+        function toggleMenu(cardNumber) {
+            const menu = document.getElementById(`menu-${cardNumber}`);
+            const allMenus = document.querySelectorAll('.sub-menu');
+            
+            // Close all other menus
+            allMenus.forEach(m => {
+                if (m !== menu) m.classList.remove('active');
+            });
+            
+            // Toggle the clicked menu
+            menu.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
