@@ -18,6 +18,7 @@
             --neon-purple: #9d4edd;
             --neon-pink: #ff007f;
             --neon-cyan: #00e5ff;
+            --whatsapp-green: #25d366;
             --text-main: #f0f4f8;
             --text-sub: #a0aec0;
             --border-glow: rgba(0, 240, 255, 0.3);
@@ -318,29 +319,29 @@
             flex-shrink: 0;
         }
 
-        .service-link-btn {
-            margin-top: 1rem;
+        .btn-apply-whatsapp {
+            margin-top: 1.2rem;
             width: 100%;
-            padding: 0.65rem 1rem;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--neon-blue);
-            color: var(--neon-cyan);
+            padding: 0.7rem 1rem;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border: none;
+            color: #ffffff;
             border-radius: 8px;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 700;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
         }
 
-        .service-card:hover .service-link-btn {
-            background: var(--neon-blue);
-            color: #080c1a;
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+        .service-card:hover .btn-apply-whatsapp {
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
         }
 
         /* Empty State */
@@ -384,14 +385,7 @@
             justify-content: center;
         }
 
-        .footer-note {
-            font-size: 0.78rem;
-            color: #6c757d;
-            max-width: 750px;
-            line-height: 1.4;
-        }
-
-        /* Floating WhatsApp Help Button */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -460,11 +454,11 @@
 
     <!-- Hero & Search Section -->
     <section class="hero">
-        <h2>सभी ऑनलाइन एवं सरकारी सेवाओं की सीधी पहुँच</h2>
-        <p>अपनी आवश्यक सेवा खोजें और आधिकारिक पोर्टल पर जाएँ या मदद प्राप्त करें।</p>
+        <h2>सभी ऑनलाइन एवं डिजिटल सेवाओं की सुविधा</h2>
+        <p>सर्विस चुनें और सीधे सोनू साइबर गोरेयाकोठी से संपर्क करें।</p>
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" placeholder="Search service (e.g. Aadhaar, PAN, Scholarship, SSC)..." onkeyup="handleSearch()">
+            <input type="text" id="searchInput" placeholder="Search service (e.g. Aadhaar, PAN, Scholarship, Caste Certificate)..." onkeyup="handleSearch()">
         </div>
     </section>
 
@@ -492,14 +486,11 @@
                 <span><strong>Sonu Cyber Goreakothi</strong></span> | 
                 <span>Address: College Road, Goreakothi, Siwan, Bihar</span>
             </div>
-            <p class="footer-note">
-                <strong>Disclaimer:</strong> This website is an independent informational service portal maintained by Sonu Cyber Goreakothi. All links redirect directly to official government and university websites.
-            </p>
             <p style="font-size: 0.85rem; color: var(--text-sub);">&copy; 2026 SONU CYBER ONLINE SERVICE PORTAL. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Help Button -->
+    <!-- Floating General WhatsApp Button -->
     <a href="https://wa.me/918227002020?text=Hello%20Sonu%20Cyber,%20I%20need%20help%20with%20an%20online%20service.%20Please%20guide%20me." 
        class="whatsapp-float" 
        target="_blank" 
@@ -510,38 +501,38 @@
 
     <!-- JavaScript Data & Logic -->
     <script>
-        // Category and Official Services Data
+        const phoneNo = "918227002020";
+
+        // Category and Services Data
         const portalData = [
             {
                 id: 'aadhaar',
                 title: 'Aadhaar Services',
                 icon: 'fa-id-card',
                 color: '#00f0ff',
-                desc: 'UIDAI official services, e-Aadhaar download & status check.',
+                desc: 'Download e-Aadhaar, address update, status check & info.',
                 services: [
-                    { name: 'UIDAI Official Website', url: 'https://uidai.gov.in/', desc: 'Official Unique Identification Authority of India portal.' },
-                    { name: 'My Aadhaar Portal', url: 'https://myaadhaar.uidai.gov.in/', desc: 'Direct resident portal for online Aadhaar services.' },
-                    { name: 'Download e-Aadhaar', url: 'https://myaadhaar.uidai.gov.in/genricDownloadAadhaar', desc: 'Download password-protected electronic Aadhaar PDF.' },
-                    { name: 'Aadhaar Status Check', url: 'https://myaadhaar.uidai.gov.in/CheckAadharStatus', desc: 'Check status of Aadhaar update or new enrollment.' },
-                    { name: 'Aadhaar Address Update', url: 'https://myaadhaar.uidai.gov.in/', desc: 'Online address update with valid proof of residence.' },
-                    { name: 'Name & DOB Update Info', url: 'https://uidai.gov.in/', desc: 'Official guidelines & proof documents list.' },
-                    { name: 'Mobile / Biometric Slot Booking', url: 'https://appointments.uidai.gov.in/', desc: 'Book appointment at nearest Aadhaar Seva Kendra.' },
-                    { name: 'Find Aadhaar Centre', url: 'https://appointments.uidai.gov.in/easeose/locatecenter.aspx', desc: 'Locate authorized Aadhaar centers near Goreakothi.' },
-                    { name: 'Virtual ID (VID) Generator', url: 'https://myaadhaar.uidai.gov.in/myaadhaar/generate-vid', desc: 'Generate 16-digit Virtual ID for safe authentication.' }
+                    { name: 'Download e-Aadhaar', desc: 'Get electronic password-protected Aadhaar PDF.' },
+                    { name: 'Aadhaar Status Check', desc: 'Check status of update or enrollment.' },
+                    { name: 'Aadhaar Address Update', desc: 'Update residential address with valid proof.' },
+                    { name: 'Name & DOB Update Info', desc: 'Correction rules and valid documents guidance.' },
+                    { name: 'Mobile / Biometric Update Slot', desc: 'Help with Aadhaar Seva Kendra appointment booking.' },
+                    { name: 'Find Aadhaar Centre', desc: 'Locate authorized Aadhaar centers near Goreakothi.' },
+                    { name: 'Virtual ID (VID) Generation', desc: 'Generate 16-digit Virtual ID for privacy.' }
                 ]
             },
             {
                 id: 'pan',
-                title: 'PAN Card & Income Tax',
+                title: 'PAN Card Services',
                 icon: 'fa-file-invoice-dollar',
                 color: '#9d4edd',
-                desc: 'Apply PAN card, PAN-Aadhaar linking & Income Tax e-Filing.',
+                desc: 'Apply new PAN, correction, PAN-Aadhaar link & e-PAN.',
                 services: [
-                    { name: 'Apply New PAN Card (Protean)', url: 'https://www.protean-tinpan.com/', desc: 'Online NSDL/Protean PAN card application portal.' },
-                    { name: 'PAN Card Correction / Update', url: 'https://www.protean-tinpan.com/', desc: 'Update Name, DOB, Photo or Father Name in PAN.' },
-                    { name: 'PAN Application Status', url: 'https://www.trackpan.utiitsl.com/PANONLINE/#forward', desc: 'Track acknowledgement status for PAN card.' },
-                    { name: 'Link PAN with Aadhaar', url: 'https://www.incometax.gov.in/iec/foportal/', desc: 'Mandatory PAN-Aadhaar linking official portal.' },
-                    { name: 'Income Tax e-Filing Portal', url: 'https://www.incometax.gov.in/', desc: 'Official portal for ITR filing & tax services.' }
+                    { name: 'Apply New PAN Card', desc: 'New PAN card application service.' },
+                    { name: 'PAN Correction & Update', desc: 'Name, DOB, Father Name or Photo correction.' },
+                    { name: 'PAN Application Status', desc: 'Track application status.' },
+                    { name: 'Link PAN with Aadhaar', desc: 'Mandatory PAN-Aadhaar linking assistance.' },
+                    { name: 'e-PAN Card Print', desc: 'Instant PDF download and printing.' }
                 ]
             },
             {
@@ -549,12 +540,13 @@
                 title: 'Scholarship Services',
                 icon: 'fa-graduation-cap',
                 color: '#ff007f',
-                desc: 'National & Bihar state scholarship portals.',
+                desc: 'National & Bihar state scholarship applications.',
                 services: [
-                    { name: 'National Scholarship Portal (NSP)', url: 'https://scholarships.gov.in/', desc: 'Central government pre-matric & post-matric schemes.' },
-                    { name: 'Bihar Post Matric Scholarship', url: 'https://pmsonline.bihar.gov.in/', desc: 'BC, EBC, SC & ST Post Matric scholarship Bihar.' },
-                    { name: 'MedhaSoft Bihar', url: 'https://medhasoft.bihar.gov.in/', desc: 'DBT school scholarship entry & status portal.' },
-                    { name: 'Bihar e-Kalyan Portal', url: 'https://ekalyan.bihar.gov.in/', desc: 'Kanya Utthan & educational incentive schemes.' }
+                    { name: 'Bihar Post Matric Scholarship', desc: 'BC, EBC, SC & ST scholarship application.' },
+                    { name: 'National Scholarship Portal (NSP)', desc: 'Pre-matric and post-matric central schemes.' },
+                    { name: 'MedhaSoft Bihar', desc: 'School DBT scholarship status & entry.' },
+                    { name: 'Bihar e-Kalyan Scheme', desc: 'Kanya Utthan & Matric/Inter incentive schemes.' },
+                    { name: 'Scholarship Application Status', desc: 'Track college & district level status.' }
                 ]
             },
             {
@@ -562,49 +554,43 @@
                 title: 'JPU University Services',
                 icon: 'fa-university',
                 color: '#00e5ff',
-                desc: 'Jai Prakash University Chapra admissions, exams & notices.',
+                desc: 'JP University Chapra admissions, exam forms & results.',
                 services: [
-                    { name: 'JPU Official Website', url: 'https://www.jpv.ac.in/', desc: 'Main portal of Jai Prakash University, Chapra.' },
-                    { name: 'JPU Admission Portal', url: 'https://jpvadm.samarth.edu.in/', desc: 'UG / PG online admission application and merit list.' },
-                    { name: 'Examination Forms & Notices', url: 'https://www.jpv.ac.in/', desc: 'Online submission of semester exam forms.' },
-                    { name: 'Admit Card Downloads', url: 'https://jpvadm.samarth.edu.in/', desc: 'Download exam admit cards for university courses.' },
-                    { name: 'JPU Results & Notifications', url: 'https://www.jpv.ac.in/', desc: 'Check UG/PG examination results & circulars.' }
+                    { name: 'JPU Admission Application', desc: 'UG / PG online admission application assistance.' },
+                    { name: 'Examination Form Filling', desc: 'UG & PG semester examination forms.' },
+                    { name: 'Admit Card Download & Print', desc: 'University examination admit card printing.' },
+                    { name: 'JPU Results & Marks Info', desc: 'Check UG/PG examination results.' },
+                    { name: 'Registration Slip Download', desc: 'Student registration slips retrieval.' }
                 ]
             },
             {
                 id: 'bihar_gov',
-                title: 'Bihar Government & RTPS',
+                title: 'Bihar RTPS & Land Services',
                 icon: 'fa-building-columns',
                 color: '#ffc107',
-                desc: 'Caste, Income, Residence certificates, Bihar Bhumi & Ration Card.',
+                desc: 'Caste, Income, Residence certificates & Bihar Bhumi.',
                 services: [
-                    { name: 'RTPS Bihar Portal', url: 'https://serviceonline.bihar.gov.in/', desc: 'Right to Public Services portal for certificates.' },
-                    { name: 'Caste Certificate (Jati)', url: 'https://serviceonline.bihar.gov.in/', desc: 'Online application for Category/Caste Certificate.' },
-                    { name: 'Income Certificate (Aaya)', url: 'https://serviceonline.bihar.gov.in/', desc: 'Online application for annual Income Certificate.' },
-                    { name: 'Residence Certificate (Niwas)', url: 'https://serviceonline.bihar.gov.in/', desc: 'Online application for Domicile/Residence proof.' },
-                    { name: 'EWS & Non-Creamy Layer (NCL)', url: 'https://serviceonline.bihar.gov.in/', desc: 'EWS and OBC/EBC Non-Creamy Layer issuance.' },
-                    { name: 'Bihar Bhumi Land Records', url: 'https://biharbhumi.bihar.gov.in/', desc: 'Khatian, Jamabandi, LPC & Online Lagan payment.' },
-                    { name: 'Ration Card Services (epds)', url: 'https://epds.bihar.gov.in/', desc: 'Apply online for new Ration Card or modification.' },
-                    { name: 'Birth & Death Registration (CRS)', url: 'https://crsorgi.gov.in/', desc: 'Civil Registration System portal for certificates.' },
-                    { name: 'Bihar Character Certificate', url: 'https://homeonline.bihar.gov.in/', desc: 'Online Police Verification / Character certificate portal.' }
+                    { name: 'Caste Certificate (Jati)', desc: 'Online application for Caste Certificate.' },
+                    { name: 'Income Certificate (Aaya)', desc: 'Online application for Income Certificate.' },
+                    { name: 'Residence Certificate (Niwas)', desc: 'Online application for Domicile/Niwas.' },
+                    { name: 'EWS & Non-Creamy Layer (NCL)', desc: 'EWS and OBC/EBC NCL Certificate.' },
+                    { name: 'Bihar Bhumi Land Tax & Lagan', desc: 'Khatian, Jamabandi & Online Lagan payment.' },
+                    { name: 'Ration Card Online Apply', desc: 'New Ration Card application & modification.' },
+                    { name: 'Character Certificate (Police)', desc: 'Online character certificate application.' }
                 ]
             },
             {
                 id: 'jobs',
-                title: 'Govt Jobs & Recruitment',
+                title: 'Govt Jobs & Online Forms',
                 icon: 'fa-briefcase',
                 color: '#00e676',
-                desc: 'SSC, UPSC, BPSC, BSSC, Railway & Bihar Police forms.',
+                desc: 'SSC, UPSC, BPSC, Railway, Bihar Police & GDS forms.',
                 services: [
-                    { name: 'SSC Portal', url: 'https://ssc.gov.in/', desc: 'Staff Selection Commission - CGL, CHSL, MTS, GD.' },
-                    { name: 'UPSC Portal', url: 'https://www.upsc.gov.in/', desc: 'Union Public Service Commission recruitment portal.' },
-                    { name: 'BPSC Portal', url: 'https://bpsc.bihar.gov.in/', desc: 'Bihar Public Service Commission exam portal.' },
-                    { name: 'BSSC Portal', url: 'https://bssc.bihar.gov.in/', desc: 'Bihar Staff Selection Commission CGL & Inter Level.' },
-                    { name: 'BTSC Portal', url: 'https://btsc.bihar.gov.in/', desc: 'Bihar Technical Service Commission recruitment.' },
-                    { name: 'Bihar Police Recruitment', url: 'https://police.bihar.gov.in/', desc: 'Constable & Sub Inspector recruitment portal.' },
-                    { name: 'India Post GDS Online', url: 'https://indiapostgdsonline.gov.in/', desc: 'Gramin Dak Sevak recruitment portal.' },
-                    { name: 'Railway Recruitment (RRB)', url: 'https://www.rrbcdg.gov.in/', desc: 'NTPC, Group D, ALP & Technician portal.' },
-                    { name: 'National Career Service (NCS)', url: 'https://www.ncs.gov.in/', desc: 'Government employment exchange registration.' }
+                    { name: 'SSC Form Apply', desc: 'CGL, CHSL, MTS, GD Constable forms.' },
+                    { name: 'BPSC & BSSC Form Apply', desc: 'Bihar Teacher, CGL & Inter level online forms.' },
+                    { name: 'Bihar Police & Sub Inspector', desc: 'Constable & SI online application.' },
+                    { name: 'Railway Recruitment (RRB)', desc: 'NTPC, Group D, ALP & Technician forms.' },
+                    { name: 'India Post GDS Online', desc: 'Gramin Dak Sevak application.' }
                 ]
             },
             {
@@ -612,41 +598,39 @@
                 title: 'Education & Admissions',
                 icon: 'fa-book-bookmark',
                 color: '#ff9100',
-                desc: 'Bihar OFSS, CBSE, IGNOU, NIOS & Student Credit Card.',
+                desc: 'OFSS Bihar, IGNOU, NIOS & Student Credit Card.',
                 services: [
-                    { name: 'Bihar OFSS Intermediate', url: 'https://ofssbihar.net/', desc: 'Online Facilitation System for 11th admissions.' },
-                    { name: 'CBSE Official Portal', url: 'https://www.cbse.gov.in/', desc: 'Central Board board results & notifications.' },
-                    { name: 'IGNOU Portal', url: 'https://www.ignou.ac.in/', desc: 'Distance learning admissions & assignments.' },
-                    { name: 'NIOS Open School Portal', url: 'https://nios.ac.in/', desc: 'National Institute of Open Schooling admissions.' },
-                    { name: 'National Testing Agency (NTA)', url: 'https://nta.ac.in/', desc: 'JEE Main, NEET UG & CUET exam portal.' },
-                    { name: 'Academic Bank of Credits (ABC)', url: 'https://www.abc.gov.in/', desc: 'Create DigiLocker ABC ID for students.' },
-                    { name: 'Bihar Student Credit Card', url: 'https://www.7nishchay-yuvaupmission.bihar.gov.in/', desc: 'MNSSBY loan scheme up to Rs 4 Lakhs.' }
+                    { name: 'Bihar OFSS 11th Admission', desc: 'Online Facilitation System admission form.' },
+                    { name: 'IGNOU Admission & Assignments', desc: 'Distance courses application & assignment submission.' },
+                    { name: 'NIOS Open School Admission', desc: '10th & 12th open board admission.' },
+                    { name: 'Bihar Student Credit Card', desc: 'Education loan scheme application guidance.' },
+                    { name: 'DigiLocker ABC ID Creation', desc: 'Academic Bank of Credits ID creation.' }
                 ]
             },
             {
                 id: 'identity',
-                title: 'Passport & Voter Services',
+                title: 'Passport & Voter ID',
                 icon: 'fa-passport',
                 color: '#e040fb',
-                desc: 'Passport Seva, Voter ID portal & DigiLocker.',
+                desc: 'Passport Seva, Voter ID card & DigiLocker.',
                 services: [
-                    { name: 'Passport Seva Portal', url: 'https://www.passportindia.gov.in/', desc: 'Apply online for Fresh Passport or Renewal.' },
-                    { name: 'Voter Service Portal', url: 'https://voters.eci.gov.in/', desc: 'Apply new Voter ID (Form 6) & correction.' },
-                    { name: 'DigiLocker Portal', url: 'https://www.digilocker.gov.in/', desc: 'Access verified government digital documents.' }
+                    { name: 'Fresh Passport Application', desc: 'Online application & appointment booking.' },
+                    { name: 'New Voter ID Card (Form 6)', desc: 'Apply new Voter ID online.' },
+                    { name: 'Voter ID Card Correction', desc: 'Name, Address & Photo correction.' },
+                    { name: 'Download e-EPIC Voter Card', desc: 'Digital Voter Card PDF download.' }
                 ]
             },
             {
                 id: 'transport',
-                title: 'Railway & Transport',
+                title: 'Railway & Driving License',
                 icon: 'fa-train-subway',
                 color: '#00b0ff',
-                desc: 'IRCTC train booking, Parivahan DL & e-Challan.',
+                desc: 'Train ticket booking, Learner license & e-Challan.',
                 services: [
-                    { name: 'IRCTC Rail Connect', url: 'https://www.irctc.co.in/', desc: 'Official train ticket booking & PNR status.' },
-                    { name: 'Parivahan Sewa Portal', url: 'https://parivahan.gov.in/', desc: 'Ministry of Road Transport official portal.' },
-                    { name: 'Driving Licence Services', url: 'https://parivahan.gov.in/', desc: 'Learner License application & renewal.' },
-                    { name: 'Vehicle RC Status', url: 'https://parivahan.gov.in/', desc: 'RC status, Transfer of ownership & tax.' },
-                    { name: 'e-Challan Payment', url: 'https://echallan.parivahan.nic.in/', desc: 'Check and pay traffic e-challan online.' }
+                    { name: 'Train Ticket Booking (IRCTC)', desc: 'Normal & Tatkal train ticket booking.' },
+                    { name: 'Learner Driving License', desc: 'Online application & LL test slot.' },
+                    { name: 'Driving License Renewal', desc: 'DL Renewal & address change.' },
+                    { name: 'Traffic e-Challan Payment', desc: 'Check and pay vehicle e-challan.' }
                 ]
             },
             {
@@ -656,24 +640,21 @@
                 color: '#76ff03',
                 desc: 'PM-Kisan, MGNREGA & PMAY Gramin.',
                 services: [
-                    { name: 'PM-Kisan Portal', url: 'https://pmkisan.gov.in/', desc: 'Farmer e-KYC, status & new registration.' },
-                    { name: 'MGNREGA Portal', url: 'https://nrega.nic.in/', desc: 'Job card download & payment status.' },
-                    { name: 'PMAY-Gramin Portal', url: 'https://pmayg.nic.in/', desc: 'Awaas Yojana rural beneficiary status.' },
-                    { name: 'Jal Jeevan Mission', url: 'https://jaljeevanmission.gov.in/', desc: 'Har Ghar Jal progress reports & info.' }
+                    { name: 'PM-Kisan Registration & e-KYC', desc: 'PM Kisan Samman Nidhi e-KYC and status.' },
+                    { name: 'PMAY Gramin Awaas Status', desc: 'Awaas Yojana beneficiary list & status.' },
+                    { name: 'MGNREGA Job Card', desc: 'Job card status and payment tracking.' }
                 ]
             },
             {
                 id: 'health',
-                title: 'Health, Labour & Pension',
+                title: 'Health & Ayushman Card',
                 icon: 'fa-heart-pulse',
                 color: '#ff5252',
-                desc: 'Ayushman Card (5 Lakh), e-Shram & EPFO.',
+                desc: 'Ayushman Card (5 Lakh), e-Shram & PF.',
                 services: [
-                    { name: 'Ayushman Beneficiary Portal', url: 'https://beneficiary.nha.gov.in/', desc: 'Create & download 5 Lakh Health Card.' },
-                    { name: 'e-Shram Portal', url: 'https://eshram.gov.in/', desc: 'Unorganized worker registration card.' },
-                    { name: 'EPFO Member Portal', url: 'https://www.epfindia.gov.in/', desc: 'Check PF balance passbook & online claim.' },
-                    { name: 'NSAP Pension Portal', url: 'https://nsap.nic.in/', desc: 'Old age, widow & disability pension status.' },
-                    { name: 'Bihar Labour Department', url: 'https://state.bihar.gov.in/labour/', desc: 'BOCW Labour card registration portal.' }
+                    { name: 'Ayushman Bharat Card Download', desc: 'Rs 5 Lakh free health card application.' },
+                    { name: 'e-Shram Card Registration', desc: 'Unorganized worker card registration.' },
+                    { name: 'EPFO PF Balance & Withdrawal', desc: 'PF passbook check & online claim.' }
                 ]
             },
             {
@@ -681,41 +662,35 @@
                 title: 'Business Registrations',
                 icon: 'fa-store',
                 color: '#ffd700',
-                desc: 'Udyam MSME, GST & FSSAI Food License.',
+                desc: 'Udyam MSME, GST & Food License.',
                 services: [
-                    { name: 'Udyam Registration', url: 'https://udyamregistration.gov.in/', desc: 'Free online MSME Udyog Aadhaar portal.' },
-                    { name: 'GST Portal', url: 'https://www.gst.gov.in/', desc: 'GST registration and return filing portal.' },
-                    { name: 'FSSAI FoSCoS Portal', url: 'https://foscos.fssai.gov.in/', desc: 'Food license & hygiene registration for shops.' },
-                    { name: 'CSC Digital Seva', url: 'https://digitalseva.csc.gov.in/', desc: 'Common Services Centre operator VLE login.' }
+                    { name: 'Udyam Registration (MSME)', desc: 'Free business registration card.' },
+                    { name: 'GST Registration', desc: 'New GST number application.' },
+                    { name: 'FSSAI Food License', desc: 'Shop & hotel food hygiene registration.' }
                 ]
             },
             {
                 id: 'tools',
-                title: 'PDF, Photo & Utilities',
-                icon: 'fa-wand-magic-sparkles',
+                title: 'Photo & PDF Printing Services',
+                icon: 'fa-print',
                 color: '#69f0ae',
-                desc: 'PDF tools, photo background removal & Canva.',
+                desc: 'Photo editing, PDF compress & high quality printouts.',
                 services: [
-                    { name: 'PDF24 Tools', url: 'https://tools.pdf24.org/', desc: 'Free browser-based PDF converter & editor.' },
-                    { name: 'iLovePDF', url: 'https://www.ilovepdf.com/', desc: 'Merge, split, compress & convert PDFs.' },
-                    { name: 'Smallpdf', url: 'https://smallpdf.com/', desc: 'Compress PDF file size for online forms.' },
-                    { name: 'Remove.bg', url: 'https://www.remove.bg/', desc: 'Automatic photo background remover.' },
-                    { name: 'Canva Design', url: 'https://www.canva.com/', desc: 'Create posters, banners & visiting cards.' },
-                    { name: 'Google Translate', url: 'https://translate.google.com/', desc: 'Translate Hindi <-> English text and documents.' }
+                    { name: 'High Quality Photo & Passport Photo', desc: 'Instant passport size photo printing.' },
+                    { name: 'PDF Compress & Format Change', desc: 'Resize & format documents for online forms.' },
+                    { name: 'Lamination & Scanning', desc: 'Document scanning and PVC card printout.' }
                 ]
             },
             {
                 id: 'legal',
                 title: 'Electricity Bill & Utility',
-                icon: 'fa-scale-balanced',
+                icon: 'fa-bolt',
                 color: '#ff80ab',
                 desc: 'NBPDCL Electricity bill pay & grievances.',
                 services: [
-                    { name: 'NBPDCL Electricity Bill', url: 'https://www.nbpdcl.co.in/', desc: 'North Bihar Power Distribution bill pay (Siwan).' },
-                    { name: 'SBPDCL Electricity Bill', url: 'https://www.sbpdcl.co.in/', desc: 'South Bihar Power Distribution bill pay.' },
-                    { name: 'RTI Online Portal', url: 'https://rtionline.gov.in/', desc: 'File Right to Information applications.' },
-                    { name: 'CPGRAMS Public Grievance', url: 'https://pgportal.gov.in/', desc: 'Lodge complaints to government departments.' },
-                    { name: 'Skill India Digital', url: 'https://www.skillindiadigital.gov.in/', desc: 'Skill development courses & PMKVY certificates.' }
+                    { name: 'NBPDCL Electricity Bill Payment', desc: 'Quick online bill payment & receipt.' },
+                    { name: 'New Electricity Connection', desc: 'Apply online for new meter.' },
+                    { name: 'CPGRAMS Public Grievance', desc: 'Lodge government department complaints.' }
                 ]
             }
         ];
@@ -777,7 +752,7 @@
             renderServiceList(category.services, category.color, category.icon);
         }
 
-        // Render Services with Official Link Button
+        // Render Services with WhatsApp Help Action
         function renderServiceList(services, color, defaultIcon) {
             const grid = document.getElementById('portalGrid');
             grid.innerHTML = '';
@@ -794,22 +769,25 @@
             }
 
             services.forEach(srv => {
+                const waMessage = encodeURIComponent(`Hello Sonu Cyber, I need help with "${srv.name}". Please guide me.`);
+                const waUrl = `https://wa.me/${phoneNo}?text=${waMessage}`;
+
                 const card = document.createElement('div');
                 card.className = 'card service-card';
-                card.onclick = () => window.open(srv.url, '_blank', 'noopener,noreferrer');
+                card.onclick = () => window.open(waUrl, '_blank');
                 card.innerHTML = `
                     <div class="card-header">
                         <div class="card-icon" style="color: ${color || 'var(--neon-blue)'}">
-                            <i class="fa-solid ${defaultIcon || 'fa-globe'}"></i>
+                            <i class="fa-solid ${defaultIcon || 'fa-hand-holding-hand'}"></i>
                         </div>
                         <div>
                             <div class="card-title" style="font-size:1.05rem;">${srv.name}</div>
                         </div>
                     </div>
                     <div class="card-desc">${srv.desc}</div>
-                    <a href="${srv.url}" target="_blank" rel="noopener noreferrer" class="service-link-btn" onclick="event.stopPropagation();">
-                        <span>Open Official Website</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="${waUrl}" target="_blank" class="btn-apply-whatsapp" onclick="event.stopPropagation();">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Apply / Help via WhatsApp</span>
                     </a>
                 `;
                 grid.appendChild(card);
