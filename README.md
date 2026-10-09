@@ -1,276 +1,188 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonu Cyber | Digital Service Portal</title>
+<title>JPU Chhapra | Question Bank</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f1f5ff;color:#182348}
-header{padding:28px 16px;color:white;text-align:center;background:linear-gradient(130deg,#10154e,#245bea,#05b7ca)}
-header h1{margin:0;font-size:29px}
-header p{margin:10px 0}
-.phone{display:inline-block;background:#ffffff22;padding:9px 16px;border-radius:20px}
-main{max-width:1100px;margin:auto;padding:18px}
-input{width:100%;padding:15px;border:1px solid #d7def2;border-radius:12px;font-size:16px;margin-bottom:20px}
-h2{font-size:21px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.cat{background:white;border:1px solid #e0e6f5;border-radius:15px;padding:16px 8px;text-align:center;cursor:pointer;box-shadow:0 5px 15px #172b6410}
-.cat:hover{transform:translateY(-3px);border-color:#3866f2}
-.cat span{font-size:29px;display:block;margin-bottom:9px}
-.cat strong{font-size:13px}
-#services{margin-top:26px}
-.list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.item{background:white;padding:14px;border-radius:12px;border:1px solid #e1e6f2}
-.item a{display:block;color:#2458df;font-weight:bold;text-decoration:none;margin-top:9px;font-size:13px}
-.item a:hover{text-decoration:underline}
-.back{padding:10px 14px;background:#172a72;color:white;border:0;border-radius:9px;cursor:pointer}
-footer{margin-top:35px;padding:24px;background:#101746;color:white;text-align:center;font-size:13px;line-height:1.8}
-@media(max-width:750px){.grid{grid-template-columns:repeat(2,1fr)}.list{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:420px){.list{grid-template-columns:1fr}header h1{font-size:24px}}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f5ff;color:#172554}
+header{background:linear-gradient(135deg,#101d55,#2563eb,#7c3aed);color:white;text-align:center;padding:30px 15px}
+header h1{margin:0;font-size:32px}
+header p{margin-bottom:0}
+main{max-width:1000px;margin:20px auto;padding:0 12px}
+.box{background:white;padding:18px;margin-bottom:16px;border-radius:16px;box-shadow:0 5px 18px #0000000d}
+h2{font-size:20px;margin-top:0}
+select,input{width:100%;padding:13px;margin:6px 0 12px;border:1px solid #d4dcf5;border-radius:10px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+button{padding:13px;border:1px solid #dbe4ff;background:#edf2ff;color:#1d3b91;border-radius:12px;font-weight:bold;cursor:pointer}
+button:hover,button.active{background:#2563eb;color:white}
+.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.qa{border:1px solid #dbe4f5;border-radius:12px;margin:12px 0;overflow:hidden}
+.question{background:#eaf0ff;padding:14px;font-weight:bold}
+.answer{padding:14px;line-height:1.7}
+a{color:#2563eb}
+footer{text-align:center;padding:20px;color:#64748b;font-size:13px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.subjects{grid-template-columns:repeat(2,1fr)}header h1{font-size:27px}}
 </style>
 </head>
 <body>
+
 <header>
-<h1>🖥️ SONU CYBER</h1>
-<p>GOREAKOTHI • DIGITAL SERVICE PORTAL</p>
-<p>सभी जरूरी ऑनलाइन सेवाएँ एक ही जगह</p>
-<div class="phone">📞 8227002020</div>
+<h1>🎓 JPU CHHAPRA</h1>
+<p>All Subjects | All Semesters | Question & Answer</p>
 </header>
 
 <main>
-<input id="search" placeholder="🔎 सेवा खोजें: Aadhaar, PAN, Scholarship..." oninput="searchServices()">
+<section class="box">
+<h2>📚 Select Your Course</h2>
 
-<h2>📂 सभी Categories</h2>
-<div class="grid" id="categories"></div>
+<label>Course</label>
+<select id="course">
+<option>B.Sc.</option>
+<option>B.A.</option>
+<option>B.Com.</option>
+</select>
 
-<section id="services" hidden>
-<button class="back" onclick="showCategories()">← सभी Categories</button>
-<h2 id="heading"></h2>
-<div class="list" id="list"></div>
+<div class="grid">
+<div>
+<label>Year</label>
+<select id="year">
+<option value="1">1st Year</option>
+<option value="2" selected>2nd Year</option>
+<option value="3">3rd Year</option>
+<option value="4">4th Year</option>
+</select>
+</div>
+
+<div>
+<label>Semester</label>
+<select id="semester">
+<option value="1">Semester 1</option>
+<option value="2">Semester 2</option>
+<option value="3" selected>Semester 3</option>
+<option value="4">Semester 4</option>
+<option value="5">Semester 5</option>
+<option value="6">Semester 6</option>
+<option value="7">Semester 7</option>
+<option value="8">Semester 8</option>
+</select>
+</div>
+
+<div>
+<label>Search</label>
+<input id="search" placeholder="Search question...">
+</div>
+</div>
+<p id="selection"></p>
+</section>
+
+<section class="box">
+<h2>📖 Select Subject</h2>
+<div id="subjects" class="subjects"></div>
+</section>
+
+<section class="box">
+<h2 id="heading">Question & Answer</h2>
+<div id="questions"></div>
+<p><a href="https://www.jpv.ac.in/syllabi" target="_blank" rel="noopener">Open Official JPU Syllabus ↗</a></p>
 </section>
 </main>
 
 <footer>
-<strong>SONU CYBER GOREAKOTHI</strong><br>
-Collage Road, Goreakothi<br>
-Contact: 8227002020<br>
-यह एक स्वतंत्र लिंक डायरेक्टरी है, सरकारी वेबसाइट नहीं।
+JPU CHHAPRA | Student Study Portal<br>
+Independent educational website; not an official university website.
 </footer>
 
 <script>
-const data=[
-{n:"बिहार सरकारी सेवाएँ",e:"🏛️",s:[
-["Bihar RTPS","https://serviceonline.bihar.gov.in/"],
-["Bihar Government","https://state.bihar.gov.in/"],
-["Bihar Public Grievance","https://lokshikayat.bihar.gov.in/"],
-["Bihar Police","https://police.bihar.gov.in/"],
-["Bihar Tourism","https://tourism.bihar.gov.in/"],
-["UMANG","https://web.umang.gov.in/"],
-["MyScheme","https://www.myscheme.gov.in/"],
-["Government Services","https://services.india.gov.in/"]
-]},
-{n:"Aadhaar & Identity",e:"🪪",s:[
-["UIDAI Official","https://uidai.gov.in/"],
-["My Aadhaar","https://myaadhaar.uidai.gov.in/"],
-["DigiLocker","https://www.digilocker.gov.in/"],
-["Voter Services","https://voters.eci.gov.in/"],
-["Election Commission","https://www.eci.gov.in/"],
-["Passport Seva","https://www.passportindia.gov.in/"]
-]},
-{n:"PAN & Tax Services",e:"💳",s:[
-["Income Tax e-Filing","https://www.incometax.gov.in/"],
-["Protean PAN","https://www.protean-tinpan.com/"],
-["UTIITSL PAN","https://www.pan.utiitsl.com/"],
-["GST Portal","https://www.gst.gov.in/"],
-["MCA Services","https://www.mca.gov.in/"],
-["Udyam Registration","https://udyamregistration.gov.in/"]
-]},
-{n:"जमीन व राजस्व",e:"🌾",s:[
-["Bihar Bhumi","https://biharbhumi.bihar.gov.in/"],
-["Bhumijankari","https://bhumijankari.bihar.gov.in/"],
-["Land Records Department","https://land.bihar.gov.in/"],
-["Registration Department","https://nibandhan.bihar.gov.in/"],
-["Department of Land Resources","https://dolr.gov.in/"]
-]},
-{n:"Scholarship",e:"🎓",s:[
-["National Scholarship Portal","https://scholarships.gov.in/"],
-["Bihar Post Matric Scholarship","https://pmsonline.bih.nic.in/"],
-["Education Ministry","https://www.education.gov.in/"],
-["AICTE","https://www.aicte-india.org/"],
-["UGC","https://www.ugc.gov.in/"]
-]},
-{n:"पढ़ाई व परीक्षा",e:"📚",s:[
-["Bihar Board","https://biharboardonline.bihar.gov.in/"],
-["BSEB Secondary","https://secondary.biharboardonline.com/"],
-["CBSE","https://www.cbse.gov.in/"],
-["NTA","https://nta.ac.in/"],
-["CUET","https://exams.nta.nic.in/cuet-ug/"],
-["JEE Main","https://jeemain.nta.nic.in/"],
-["NEET","https://neet.nta.nic.in/"],
-["IGNOU","https://www.ignou.ac.in/"],
-["SWAYAM","https://swayam.gov.in/"]
-]},
-{n:"सरकारी नौकरी",e:"🧑‍💼",s:[
-["SSC","https://ssc.gov.in/"],
-["UPSC","https://upsc.gov.in/"],
-["BPSC","https://bpsc.bihar.gov.in/"],
-["BSSC","https://bssc.bihar.gov.in/"],
-["BTSC","https://btsc.bihar.gov.in/"],
-["CSBC Bihar Police","https://csbc.bihar.gov.in/"],
-["National Career Service","https://www.ncs.gov.in/"],
-["Railway Recruitment","https://www.rrbcdg.gov.in/"],
-["India Post GDS","https://indiapostgdsonline.gov.in/"],
-["Employment News","https://employmentnews.gov.in/"]
-]},
-{n:"किसान योजनाएँ",e:"🚜",s:[
-["PM-KISAN","https://pmkisan.gov.in/"],
-["PM Fasal Bima","https://pmfby.gov.in/"],
-["Soil Health Card","https://soilhealth.dac.gov.in/"],
-["e-NAM","https://www.enam.gov.in/"],
-["Agriculture Ministry","https://agriwelfare.gov.in/"]
-]},
-{n:"बैंकिंग व पेंशन",e:"🏦",s:[
-["RBI","https://www.rbi.org.in/"],
-["NPCI","https://www.npci.org.in/"],
-["SBI","https://sbi.co.in/"],
-["Bank of Baroda","https://www.bankofbaroda.in/"],
-["Punjab National Bank","https://www.pnbindia.in/"],
-["India Post Payments Bank","https://www.ippbonline.com/"],
-["EPFO","https://www.epfindia.gov.in/"],
-["ESIC","https://www.esic.gov.in/"],
-["e-Shram","https://eshram.gov.in/"],
-["Pension Portal","https://pensionersportal.gov.in/"]
-]},
-{n:"Railway & Transport",e:"🚆",s:[
-["IRCTC","https://www.irctc.co.in/"],
-["Indian Railways","https://indianrailways.gov.in/"],
-["Train Enquiry","https://enquiry.indianrail.gov.in/"],
-["Parivahan","https://parivahan.gov.in/"],
-["Driving Licence","https://sarathi.parivahan.gov.in/"],
-["Vehicle Services","https://vahan.parivahan.gov.in/"],
-["eChallan","https://echallan.parivahan.gov.in/"],
-["India Post","https://www.indiapost.gov.in/"]
-]},
-{n:"शिकायत व नागरिक मदद",e:"⚖️",s:[
-["CPGRAMS","https://pgportal.gov.in/"],
-["Consumer Helpline","https://consumerhelpline.gov.in/"],
-["Cyber Crime Portal","https://cybercrime.gov.in/"],
-["RTI Online","https://rtionline.gov.in/"],
-["eCourts","https://ecourts.gov.in/"],
-["India Code","https://www.indiacode.nic.in/"],
-["MyGov","https://www.mygov.in/"]
-]},
-{n:"Design & PDF Tools",e:"🎨",s:[
-["Canva","https://www.canva.com/"],
-["Adobe Express","https://www.adobe.com/express/"],
-["Photopea","https://www.photopea.com/"],
-["Remove Background","https://www.remove.bg/"],
-["Google Docs","https://docs.google.com/"],
-["Google Forms","https://forms.google.com/"],
-["Google Drive","https://drive.google.com/"],
-["PDF24","https://tools.pdf24.org/"],
-["iLovePDF","https://www.ilovepdf.com/"],
-["Smallpdf","https://smallpdf.com/"]
-]},
-{n:"स्वास्थ्य सेवाएँ",e:"🏥",s:[
-["Health Ministry","https://mohfw.gov.in/"],
-["Ayushman Bharat","https://pmjay.gov.in/"],
-["ABHA Health ID","https://abha.abdm.gov.in/"],
-["eSanjeevani","https://esanjeevani.mohfw.gov.in/"],
-["Bihar Health Department","https://state.bihar.gov.in/health/"]
-]},
-{n:"ऑनलाइन सीखना",e:"💡",s:[
-["SWAYAM","https://swayam.gov.in/"],
-["NPTEL","https://nptel.ac.in/"],
-["DIKSHA","https://diksha.gov.in/"],
-["ePathshala","https://epathshala.nic.in/"],
-["Khan Academy","https://www.khanacademy.org/"],
-["Coursera","https://www.coursera.org/"]
-]},
-{n:"Business & Digital Work",e:"🧾",s:[
-["GeM Portal","https://gem.gov.in/"],
-["Startup India","https://www.startupindia.gov.in/"],
-["CSC Official","https://csc.gov.in/"],
-["Digital India","https://www.digitalindia.gov.in/"],
-["Government e-Tenders","https://eprocure.gov.in/"]
-]},
-{n:"Email & Online Tools",e:"☁️",s:[
-["Gmail","https://mail.google.com/"],
-["Google Search","https://www.google.com/"],
-["Google Translate","https://translate.google.com/"],
-["Google Maps","https://maps.google.com/"],
-["Google Photos","https://photos.google.com/"],
-["Microsoft Office","https://www.office.com/"],
-["OneDrive","https://onedrive.live.com/"]
-]}
-];
+const subjects={
+"B.Sc.":["Zoology","Botany","Physics","Chemistry","Mathematics","Statistics","Geology","Computer Science"],
+"B.A.":["Hindi","English","History","Political Science","Geography","Economics","Psychology","Sociology","Philosophy","Sanskrit"],
+"B.Com.":["Accountancy","Business Studies","Economics","Business Law","Finance","Management"]
+};
 
-const cats=document.getElementById("categories");
-const section=document.getElementById("services");
-const list=document.getElementById("list");
-const heading=document.getElementById("heading");
-const search=document.getElementById("search");
+const data={
+"Zoology":[
+{q:"What is Zoology?",a:"Zoology is the branch of biology that deals with the study of animals. / प्राणी विज्ञान जीव विज्ञान की वह शाखा है जिसमें जानवरों का अध्ययन किया जाता है।"},
+{q:"What is a cell?",a:"A cell is the basic structural and functional unit of life. / कोशिका जीवन की मूल संरचनात्मक और क्रियात्मक इकाई है।"},
+{q:"What is a vertebrate?",a:"A vertebrate is an animal that has a backbone. / कशेरुकी वह जीव है जिसमें रीढ़ की हड्डी होती है।"},
+{q:"What is an ecosystem?",a:"An ecosystem includes living organisms and their physical environment. / पारितंत्र में जीव और उनका भौतिक पर्यावरण शामिल होते हैं।"}
+],
+"Botany":[
+{q:"What is Botany?",a:"Botany is the branch of biology that studies plants. / वनस्पति विज्ञान में पौधों का अध्ययन किया जाता है।"},
+{q:"What is photosynthesis?",a:"Photosynthesis is the process by which green plants make food using light energy. / प्रकाश संश्लेषण में हरे पौधे प्रकाश की ऊर्जा से भोजन बनाते हैं।"}
+],
+"Physics":[
+{q:"What is force?",a:"Force is a push or pull that can change the motion of an object. / बल धक्का या खिंचाव है जो किसी वस्तु की गति बदल सकता है।"},
+{q:"What is the SI unit of force?",a:"The SI unit of force is Newton (N). / बल की SI इकाई न्यूटन है।"}
+],
+"Chemistry":[
+{q:"What is an atom?",a:"An atom is the smallest unit of an element that retains its chemical identity. / परमाणु किसी तत्व की सबसे छोटी इकाई है जो उसकी रासायनिक पहचान बनाए रखती है।"},
+{q:"What is a molecule?",a:"A molecule consists of two or more atoms chemically bonded together. / अणु दो या अधिक रासायनिक रूप से जुड़े परमाणुओं से बनता है।"}
+],
+"Mathematics":[
+{q:"What is a set?",a:"A set is a well-defined collection of distinct objects. / समुच्चय अलग-अलग वस्तुओं का स्पष्ट रूप से परिभाषित संग्रह है।"},
+{q:"What is a matrix?",a:"A matrix is a rectangular arrangement of elements in rows and columns. / आव्यूह पंक्तियों और स्तंभों में तत्वों की आयताकार व्यवस्था है।"}
+]
+};
 
-function showCategories(){
- section.hidden=true;
- cats.parentElement.hidden=false;
- cats.style.display="grid";
+let selected="Zoology";
+
+function renderSubjects(){
+const course=document.getElementById("course").value;
+const list=subjects[course];
+
+if(!list.includes(selected)) selected=list[0];
+
+document.getElementById("subjects").innerHTML=list.map(s=>
+`<button class="${s===selected?'active':''}" onclick="chooseSubject('${s}')">${s}</button>`
+).join("");
+
+renderQuestions();
 }
-function openCategory(index){
- const category=data[index];
- heading.textContent=category.e+" "+category.n;
- list.innerHTML="";
- category.s.forEach(item=>addItem(item[0],item[1],category.n));
- cats.style.display="none";
- section.hidden=false;
- section.scrollIntoView({behavior:"smooth"});
+
+function chooseSubject(s){
+selected=s;
+renderSubjects();
 }
-function addItem(name,url,category){
- const div=document.createElement("div");
- div.className="item";
- const title=document.createElement("strong");
- title.textContent=name;
- const desc=document.createElement("div");
- desc.style.cssText="font-size:12px;color:#68738b;margin-top:5px";
- desc.textContent=category;
- const a=document.createElement("a");
- a.href=url;a.target="_blank";a.rel="noopener noreferrer";
- a.textContent="Open Website ↗";
- div.append(title,desc,a);list.appendChild(div);
+
+function renderQuestions(){
+const course=document.getElementById("course").value;
+const year=document.getElementById("year").value;
+const semester=document.getElementById("semester").value;
+const term=document.getElementById("search").value.toLowerCase();
+
+document.getElementById("selection").textContent=
+`${course} | Year ${year} | Semester ${semester}`;
+
+document.getElementById("heading").textContent=
+selected+" — Question & Answer";
+
+const list=(data[selected]||[]).filter(item=>
+(item.q+" "+item.a).toLowerCase().includes(term)
+);
+
+if(list.length===0){
+document.getElementById("questions").innerHTML=
+"<p>इस विषय के प्रश्न-उत्तर अभी नहीं जोड़े गए हैं। इस विषय का सही सिलेबस देखकर प्रश्न-उत्तर जोड़ें।</p>";
+return;
 }
-function renderCategories(){
- cats.innerHTML="";
- data.forEach((c,i)=>{
-  const b=document.createElement("button");
-  b.className="cat";
-  b.innerHTML="<span>"+c.e+"</span><strong>"+c.n+"</strong>";
-  b.onclick=()=>openCategory(i);
-  cats.appendChild(b);
- });
- cats.style.display="grid";
+
+document.getElementById("questions").innerHTML=list.map((item,i)=>
+`<div class="qa">
+<div class="question">Q${i+1}. ${item.q}</div>
+<div class="answer"><b>Answer:</b> ${item.a}</div>
+</div>`
+).join("");
 }
-function searchServices(){
- const q=search.value.trim().toLowerCase();
- if(!q){showCategories();return}
- const matches=[];
- data.forEach(c=>c.s.forEach(s=>{
-  if((s[0]+" "+c.n+" "+s[1]).toLowerCase().includes(q))
-   matches.push({name:s[0],url:s[1],category:c.n});
- }));
- heading.textContent="🔎 Search Results";
- list.innerHTML="";
- matches.forEach(x=>addItem(x.name,x.url,x.category));
- cats.style.display="none";
- section.hidden=false;
- if(!matches.length){
-  const msg=document.createElement("p");
-  msg.textContent="कोई लिंक नहीं मिला। दूसरा नाम खोजें।";
-  list.appendChild(msg);
- }
-}
-renderCategories();
+
+["course","year","semester"].forEach(id=>
+document.getElementById(id).addEventListener("change",renderSubjects)
+);
+
+document.getElementById("search").addEventListener("input",renderQuestions);
+
+renderSubjects();
 </script>
 </body>
 </html>
