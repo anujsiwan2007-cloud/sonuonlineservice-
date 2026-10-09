@@ -1,1390 +1,380 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SONU DIGITAL SERVICE | Goreakothi</title>
-
+<title>Sonu Cyber Online Service Portal</title>
 <style>
-:root{
-  --primary:#6c5ce7;
-  --blue:#0984e3;
-  --green:#00b894;
-  --pink:#e84393;
-  --orange:#fd9644;
-  --dark:#17152f;
-  --bg:#f5f6ff;
-  --white:#fff;
-  --text:#19192b;
-  --muted:#6d6d80;
-  --shadow:0 10px 30px rgba(35,30,90,.12);
+:root {
+  --blue:#155eef;
+  --dark:#102448;
+  --bg:#f3f6fc;
 }
-
-*{
+* { box-sizing:border-box; }
+body {
   margin:0;
-  padding:0;
-  box-sizing:border-box;
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  background:var(--bg);
+  color:#172033;
 }
-
-html{
-  scroll-behavior:smooth;
+header {
+  padding:30px 16px;
+  text-align:center;
+  color:white;
+  background:linear-gradient(135deg,#102448,#155eef,#7c3aed);
 }
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(135deg,#f7f7ff,#eefaff);
-  color:var(--text);
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-/* HEADER */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:999;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #eee;
-}
-
-.nav{
-  max-width:1200px;
-  margin:auto;
-  padding:12px 18px;
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:20px;
-  font-weight:900;
-  color:var(--primary);
-  white-space:nowrap;
-}
-
-.logo-icon{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  display:grid;
+.logo {
+  display:inline-grid;
   place-items:center;
-  color:white;
-  font-weight:bold;
-  background:linear-gradient(135deg,#6c5ce7,#0984e3);
-  box-shadow:0 7px 20px #6c5ce755;
-}
-
-.nav-menu{
-  margin-left:auto;
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
-.nav-menu a{
-  padding:10px 12px;
-  border-radius:12px;
-  font-size:14px;
-  font-weight:bold;
-}
-
-.nav-menu a:hover{
-  background:#eeeaff;
-  color:var(--primary);
-}
-
-.menu-btn{
-  display:none;
-  margin-left:auto;
-  border:0;
-  padding:10px 13px;
-  border-radius:12px;
-  background:#eeeaff;
-  font-size:20px;
-}
-
-/* HERO */
-
-.hero{
-  max-width:1200px;
-  margin:28px auto;
-  padding:0 18px;
-}
-
-.hero-box{
-  padding:45px 32px;
-  border-radius:30px;
-  color:white;
-  background:
-  radial-gradient(circle at 85% 15%,#00b89466,transparent 30%),
-  radial-gradient(circle at 10% 90%,#e8439366,transparent 30%),
-  linear-gradient(135deg,#29215e,#6c5ce7,#0984e3);
-  box-shadow:var(--shadow);
-}
-
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.badge{
-  padding:8px 13px;
-  border-radius:30px;
-  background:#ffffff20;
-  border:1px solid #ffffff40;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.hero h1{
-  font-size:clamp(36px,6vw,65px);
-  line-height:1;
-  margin-top:18px;
-}
-
-.hero p{
-  max-width:720px;
-  margin:18px 0;
-  font-size:17px;
-  line-height:1.6;
-}
-
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:13px 18px;
-  border-radius:14px;
-  font-weight:bold;
-}
-
-.btn-white{
-  background:white;
-  color:#4939bd;
-}
-
-.btn-transparent{
-  color:white;
+  width:65px;height:65px;
+  background:#ffffff22;
   border:1px solid #ffffff55;
-  background:#ffffff18;
-}
-
-/* MAIN */
-
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:0 18px 60px;
-}
-
-/* SEARCH */
-
-.search-area{
-  margin:20px 0 30px;
-}
-
-.search{
-  width:100%;
-  border:1px solid #e2e2f0;
-  background:white;
-  border-radius:16px;
-  padding:16px;
-  outline:none;
-  font-size:16px;
-  box-shadow:0 5px 20px #312e8110;
-}
-
-.search:focus{
-  border-color:var(--primary);
-}
-
-/* SECTION */
-
-.section{
-  margin-top:35px;
-  scroll-margin-top:90px;
-}
-
-.section-title{
-  margin-bottom:17px;
-}
-
-.section-title h2{
-  font-size:27px;
-}
-
-.section-title p{
-  color:var(--muted);
-  margin-top:5px;
-  font-size:14px;
-}
-
-/* CARDS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-
-.card{
-  position:relative;
-  overflow:hidden;
-  background:white;
-  border:1px solid #e9e9f2;
-  border-radius:22px;
-  padding:19px;
-  box-shadow:0 7px 22px rgba(39,32,96,.07);
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow);
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:5px;
-  height:100%;
-  background:var(--accent);
-}
-
-.icon{
-  width:50px;
-  height:50px;
-  border-radius:15px;
-  display:grid;
-  place-items:center;
-  font-size:25px;
-  margin-bottom:13px;
-  background:#f0efff;
-}
-
-.card h3{
-  font-size:17px;
-  margin-bottom:7px;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.5;
-  min-height:40px;
-}
-
-.open-btn{
-  display:inline-block;
-  margin-top:14px;
-  padding:10px 13px;
-  border-radius:12px;
-  background:#f0efff;
-  color:#4c3fc0;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.open-btn:hover{
-  background:var(--primary);
-  color:white;
-}
-
-/* COLORS */
-
-.aadhaar{--accent:#6c5ce7}
-.pan{--accent:#0984e3}
-.gov{--accent:#00b894}
-.edu{--accent:#e84393}
-.print{--accent:#fd9644}
-
-.aadhaar .icon{background:#eeeaff}
-.pan .icon{background:#eaf6ff}
-.gov .icon{background:#eafff8}
-.edu .icon{background:#fff0f8}
-.print .icon{background:#fff5e8}
-
-/* NOTICE */
-
-.notice{
-  margin-top:30px;
-  padding:20px;
   border-radius:20px;
-  background:white;
-  border:1px solid #e6e6f0;
-  box-shadow:var(--shadow);
+  font-size:30px;
 }
-
-.notice strong{
-  display:block;
-  margin-bottom:7px;
+header h1 { margin:12px 0 5px; font-size:27px; }
+header p { margin:5px 0; }
+.search-wrap { max-width:650px; margin:22px auto 0; }
+input {
+  width:100%; padding:15px;
+  border:0; border-radius:12px;
+  font-size:16px; outline:none;
 }
-
-.notice p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.6;
+.container { max-width:1200px; margin:auto; padding:20px 14px; }
+.welcome {
+  background:white; padding:18px;
+  border-radius:16px; margin-bottom:22px;
+  box-shadow:0 3px 14px #14254b0c;
 }
-
-/* CONTACT */
-
-.contact-box{
+h2 { font-size:21px; margin:8px 0 16px; }
+.category-grid {
   display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:12px; margin-bottom:30px;
 }
-
-.contact-card{
-  background:white;
-  border-radius:24px;
-  padding:25px;
-  border:1px solid #e7e7f0;
-  box-shadow:var(--shadow);
+.category {
+  padding:18px 10px; border-radius:15px;
+  border:1px solid #e3e8f3;
+  background:white; cursor:pointer;
+  text-align:center; font-weight:bold;
+  transition:.2s; color:#172033;
 }
-
-.contact-card h3{
-  font-size:23px;
-  margin-bottom:8px;
+.category:hover,.category.active {
+  transform:translateY(-3px);
+  border-color:#155eef;
+  box-shadow:0 6px 20px #155eef20;
 }
-
-.contact-card p{
-  color:var(--muted);
-  line-height:1.6;
+.category .emoji { display:block; font-size:28px; margin-bottom:9px; }
+.section { margin:26px 0; scroll-margin-top:15px; }
+.section-title {
+  display:flex; align-items:center; gap:10px;
+  padding-bottom:10px; border-bottom:2px solid #e2e8f0;
 }
-
-.contact-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:13px; margin-top:14px;
 }
-
-.whatsapp{
-  background:#16a34a;
-  color:white;
+.service {
+  background:white; border:1px solid #e3e8f3;
+  border-radius:14px; padding:16px;
+  box-shadow:0 3px 12px #17203308;
+  display:flex; flex-direction:column; gap:10px;
 }
-
-.call{
-  background:#0984e3;
-  color:white;
+.service h3 { font-size:16px; margin:0; }
+.service p { font-size:13px; color:#667085; margin:0; flex:1; }
+.open {
+  display:block; text-decoration:none; text-align:center;
+  padding:11px; border-radius:9px;
+  color:white; background:var(--blue); font-weight:bold;
 }
-
-.map{
-  background:#e84393;
-  color:white;
+.open:hover { background:#1048bd; }
+.empty { display:none; padding:25px; text-align:center; }
+footer {
+  background:var(--dark); color:white;
+  text-align:center; padding:25px 12px; margin-top:30px;
+  font-size:13px; line-height:1.8;
 }
-
-.admin{
-  background:#17152f;
-  color:white;
-}
-
-/* FOOTER */
-
-footer{
-  background:#17152f;
-  color:white;
-  padding:30px 18px;
-}
-
-.footer{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.footer p{
-  color:#c7c5d9;
-  font-size:13px;
-  margin-top:5px;
-}
-
-/* TOP BUTTON */
-
-.top{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:45px;
-  height:45px;
-  border:0;
-  border-radius:14px;
-  background:var(--primary);
-  color:white;
-  font-size:20px;
-  cursor:pointer;
-  display:none;
-}
-
-/* MOBILE */
-
-@media(max-width:950px){
-
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .contact-box{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:650px){
-
-  .nav-menu{
-    display:none;
-    position:absolute;
-    left:12px;
-    right:12px;
-    top:68px;
-    padding:10px;
-    background:white;
-    border-radius:18px;
-    box-shadow:var(--shadow);
-  }
-
-  .nav-menu.open{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-  }
-
-  .menu-btn{
-    display:block;
-  }
-
-  .hero-box{
-    padding:32px 21px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  .grid{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-
-  .card{
-    padding:15px;
-    border-radius:18px;
-  }
-
-  .card h3{
-    font-size:15px;
-  }
-
-  .card p{
-    font-size:12px;
-  }
-
-  .open-btn{
-    font-size:12px;
-    padding:9px 10px;
-  }
-
-}
-
-@media(max-width:390px){
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .nav-menu.open{
-    grid-template-columns:1fr;
-  }
-
+.notice { color:#475467; font-size:13px; line-height:1.7; }
+@media(max-width:480px) {
+  header h1 { font-size:23px; }
+  .services { grid-template-columns:1fr 1fr; gap:9px; }
+  .service { padding:12px; }
+  .service h3 { font-size:14px; }
+  .open { font-size:12px; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
-
-<nav class="nav">
-
-<a href="#home" class="logo">
-<span class="logo-icon">SD</span>
-SONU DIGITAL SERVICE
-</a>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<div class="nav-menu" id="navMenu">
-
-<a href="#home">🏠 Home</a>
-<a href="#aadhaar">🪪 Aadhaar</a>
-<a href="#pan">💳 PAN</a>
-<a href="#government">📄 Govt.</a>
-<a href="#education">🎓 Education</a>
-<a href="#printing">🖨️ Printing</a>
-<a href="#contact">📞 Contact</a>
-
-</div>
-
-</nav>
-
+  <div class="logo">💻</div>
+  <h1>SONU CYBER</h1>
+  <p><b>ONLINE SERVICE PORTAL</b></p>
+  <p>All Digital Services at One Place</p>
+  <div class="search-wrap">
+    <input id="search" type="search"
+      placeholder="🔎 Search service, scholarship, JPU, Aadhaar..."
+      aria-label="Search services">
+  </div>
 </header>
 
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-<div class="hero-box">
-
-<div class="badges">
-
-<span class="badge">⚡ Fast Service</span>
-<span class="badge">🔗 Official Portals</span>
-<span class="badge">📱 Mobile Friendly</span>
-
-</div>
-
-<h1>
-SONU DIGITAL<br>
-SERVICE
-</h1>
-
-<p>
-Aadhaar, PAN, Bihar Government, Education,
-Printing and Digital Services — all in one place.
-Select your required service and continue to the
-official portal.
-</p>
-
-<div class="buttons">
-
-<a class="btn btn-white" href="#aadhaar">
-Explore Services →
-</a>
-
-<a class="btn btn-transparent"
-href="https://sonu-digital-service.github.io/Chandan-digital-service/"
-target="_blank">
-Main Portal ↗
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
 <main class="container">
-
-
-<!-- SEARCH -->
-
-<div class="search-area">
-
-<input
-type="text"
-id="search"
-class="search"
-placeholder="🔎 Search service... Aadhaar, PAN, Caste, Scholarship..."
->
-
-</div>
-
-
-<!-- ================= AADHAAR ================= -->
-
-<section class="section" id="aadhaar">
-
-<div class="section-title">
-<h2>🪪 Aadhaar Services</h2>
-<p>Official UIDAI services</p>
-</div>
-
-<div class="grid">
-
-<div class="card aadhaar service">
-<div class="icon">🆕</div>
-<h3>New Aadhaar</h3>
-<p>Find an official Aadhaar enrolment centre.</p>
-<a class="open-btn"
-href="https://myaadhaar.uidai.gov.in/enrolment-update"
-target="_blank">
-Open Official ↗
-</a>
-</div>
-
-
-<div class="card aadhaar service">
-<div class="icon">📥</div>
-<h3>Aadhaar Download</h3>
-<p>Download your e-Aadhaar from UIDAI.</p>
-<a class="open-btn"
-href="https://myaadhaar.uidai.gov.in/genricDownloadAadhaar/en"
-target="_blank">
-Download ↗
-</a>
-</div>
-
-
-<div class="card aadhaar service">
-<div class="icon">🔎</div>
-<h3>Aadhaar Status</h3>
-<p>Check Aadhaar enrolment or update status.</p>
-<a class="open-btn"
-href="https://myaadhaar.uidai.gov.in/CheckAadhaarStatus/en"
-target="_blank">
-Check Status ↗
-</a>
-</div>
-
-
-<div class="card aadhaar service">
-<div class="icon">✏️</div>
-<h3>Aadhaar Update</h3>
-<p>Access official Aadhaar update services.</p>
-<a class="open-btn"
-href="https://myaadhaar.uidai.gov.in/"
-target="_blank">
-Update ↗
-</a>
-</div>
-
-
-<div class="card aadhaar service">
-<div class="icon">💳</div>
-<h3>PVC Card</h3>
-<p>Order Aadhaar PVC card online.</p>
-<a class="open-btn"
-href="https://myaadhaar.uidai.gov.in/genricPVC/en"
-target="_blank">
-Order PVC ↗
-</a>
-</div>
-
-
-<div class="card aadhaar service">
-<div class="icon">✅</div>
-<h3>Verify Aadhaar</h3>
-<p>Verify Aadhaar number through UIDAI.</p>
-<a class="open-btn"
-href="https://myaadhaar.uidai.gov.in/verifyAadhaar"
-target="_blank">
-Verify ↗
-</a>
-</div>
-
-
-<div class="card aadhaar service">
-<div class="icon">📅</div>
-<h3>Appointment</h3>
-<p>Book an Aadhaar Seva Kendra appointment.</p>
-<a class="open-btn"
-href="https://bookappointment.uidai.gov.in/"
-target="_blank">
-Book Now ↗
-</a>
-</div>
-
-
-<div class="card aadhaar service">
-<div class="icon">📍</div>
-<h3>Find Aadhaar Centre</h3>
-<p>Locate Aadhaar enrolment/update centres.</p>
-<a class="open-btn"
-href="https://bhuvan-app3.nrsc.gov.in/aadhaar/"
-target="_blank">
-Find Centre ↗
-</a>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= PAN ================= -->
-
-<section class="section" id="pan">
-
-<div class="section-title">
-<h2>💳 PAN Card Services</h2>
-<p>Official Income Tax services</p>
-</div>
-
-<div class="grid">
-
-<div class="card pan service">
-
-<div class="icon">🆕</div>
-
-<h3>New PAN / e-PAN</h3>
-
-<p>
-Access official PAN services.
-</p>
-
-<a class="open-btn"
-href="https://www.incometax.gov.in/iec/foportal/"
-target="_blank">
-
-Open Official ↗
-
-</a>
-
-</div>
-
-
-<div class="card pan service">
-
-<div class="icon">✏️</div>
-
-<h3>PAN Correction</h3>
-
-<p>
-PAN related correction services.
-</p>
-
-<a class="open-btn"
-href="https://www.incometax.gov.in/iec/foportal/pre-login-services"
-target="_blank">
-
-Open Service ↗
-
-</a>
-
-</div>
-
-
-<div class="card pan service">
-
-<div class="icon">📥</div>
-
-<h3>e-PAN</h3>
-
-<p>
-Access e-PAN related services.
-</p>
-
-<a class="open-btn"
-href="https://www.incometax.gov.in/iec/foportal/"
-target="_blank">
-
-Open e-PAN ↗
-
-</a>
-
-</div>
-
-
-<div class="card pan service">
-
-<div class="icon">🔎</div>
-
-<h3>PAN Verify</h3>
-
-<p>
-Verify PAN through official services.
-</p>
-
-<a class="open-btn"
-href="https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/verify-your-pan"
-target="_blank">
-
-Verify ↗
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= GOVERNMENT ================= -->
-
-<section class="section" id="government">
-
-<div class="section-title">
-
-<h2>📄 Government Services</h2>
-
-<p>
-Bihar ServicePlus / RTPS
-</p>
-
-</div>
-
-<div class="grid">
-
-
-<div class="card gov service">
-
-<div class="icon">🏛️</div>
-
-<h3>RTPS</h3>
-
-<p>
-Bihar official ServicePlus portal.
-</p>
-
-<a class="open-btn"
-href="https://serviceonline.bihar.gov.in/"
-target="_blank">
-
-Open RTPS ↗
-
-</a>
-
-</div>
-
-
-<div class="card gov service">
-
-<div class="icon">📜</div>
-
-<h3>Caste Certificate</h3>
-
-<p>
-Apply for caste certificate.
-</p>
-
-<a class="open-btn"
-href="https://serviceonline.bihar.gov.in/"
-target="_blank">
-
-Apply ↗
-
-</a>
-
-</div>
-
-
-<div class="card gov service">
-
-<div class="icon">💰</div>
-
-<h3>Income Certificate</h3>
-
-<p>
-Apply for income certificate.
-</p>
-
-<a class="open-btn"
-href="https://serviceonline.bihar.gov.in/"
-target="_blank">
-
-Apply ↗
-
-</a>
-
-</div>
-
-
-<div class="card gov service">
-
-<div class="icon">🏠</div>
-
-<h3>Residence Certificate</h3>
-
-<p>
-Apply for residence certificate.
-</p>
-
-<a class="open-btn"
-href="https://serviceonline.bihar.gov.in/"
-target="_blank">
-
-Apply ↗
-
-</a>
-
-</div>
-
-
-<div class="card gov service">
-
-<div class="icon">📑</div>
-
-<h3>NCL / EWS / Other</h3>
-
-<p>
-Other Bihar government services.
-</p>
-
-<a class="open-btn"
-href="https://serviceonline.bihar.gov.in/"
-target="_blank">
-
-View Services ↗
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= EDUCATION ================= -->
-
-<section class="section" id="education">
-
-<div class="section-title">
-
-<h2>🎓 Education Services</h2>
-
-<p>
-Student portals and education services
-</p>
-
-</div>
-
-<div class="grid">
-
-
-<div class="card edu service">
-
-<div class="icon">🎓</div>
-
-<h3>Scholarship</h3>
-
-<p>
-Bihar Post Matric Scholarship.
-</p>
-
-<a class="open-btn"
-href="https://pmsonline.bihar.gov.in/"
-target="_blank">
-
-Open PMS ↗
-
-</a>
-
-</div>
-
-
-<div class="card edu service">
-
-<div class="icon">📝</div>
-
-<h3>Admission Form</h3>
-
-<p>
-Access education resources.
-</p>
-
-<a class="open-btn"
-href="https://www.education.gov.in/"
-target="_blank">
-
-Open ↗
-
-</a>
-
-</div>
-
-
-<div class="card edu service">
-
-<div class="icon">📚</div>
-
-<h3>Exam Form</h3>
-
-<p>
-Access official education resources.
-</p>
-
-<a class="open-btn"
-href="https://www.education.gov.in/"
-target="_blank">
-
-Open ↗
-
-</a>
-
-</div>
-
-
-<div class="card edu service">
-
-<div class="icon">🏆</div>
-
-<h3>Result</h3>
-
-<p>
-Find official education resources.
-</p>
-
-<a class="open-btn"
-href="https://www.education.gov.in/"
-target="_blank">
-
-Open ↗
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= PRINTING ================= -->
-
-<section class="section" id="printing">
-
-<div class="section-title">
-
-<h2>🖨️ Printing Services</h2>
-
-<p>
-SONU DIGITAL SERVICE local services
-</p>
-
-</div>
-
-<div class="grid">
-
-
-<div class="card print service">
-
-<div class="icon">📸</div>
-
-<h3>Photo</h3>
-
-<p>
-Passport photo and photo printing.
-</p>
-
-<a class="open-btn"
-href="#contact">
-
-Contact ↗
-
-</a>
-
-</div>
-
-
-<div class="card print service">
-
-<div class="icon">🖨️</div>
-
-<h3>Print</h3>
-
-<p>
-Document and colour/B&W printing.
-</p>
-
-<a class="open-btn"
-href="#contact">
-
-Contact ↗
-
-</a>
-
-</div>
-
-
-<div class="card print service">
-
-<div class="icon">📄</div>
-
-<h3>Scan</h3>
-
-<p>
-Document scanning service.
-</p>
-
-<a class="open-btn"
-href="#contact">
-
-Contact ↗
-
-</a>
-
-</div>
-
-
-<div class="card print service">
-
-<div class="icon">🪪</div>
-
-<h3>Lamination</h3>
-
-<p>
-Document and card lamination.
-</p>
-
-<a class="open-btn"
-href="#contact">
-
-Contact ↗
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= NOTICE ================= -->
-
-<div class="notice">
-
-<strong>
-🔐 Important Information
-</strong>
-
-<p>
-SONU DIGITAL SERVICE is a service-navigation website.
-Government applications, OTP authentication and approvals
-are handled on the respective official portals.
-Never share your OTP, password or confidential credentials
-with anyone unnecessarily.
-</p>
-
-</div>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="section" id="contact">
-
-<div class="section-title">
-
-<h2>📞 Contact</h2>
-
-<p>
-SONU DIGITAL SERVICE · Goreakothi, Siwan, Bihar
-</p>
-
-</div>
-
-
-<div class="contact-box">
-
-
-<div class="contact-card">
-
-<h3>
-Need help with an online service?
-</h3>
-
-<p>
-Contact SONU DIGITAL SERVICE for online forms,
-printing, scanning, photographs and assistance
-with official portals.
-</p>
-
-
-<div class="contact-buttons">
-
-<a class="btn whatsapp"
-href="https://wa.me/918227002020"
-target="_blank">
-
-💬 WhatsApp
-
-</a>
-
-
-<a class="btn call"
-href="tel:+918227002020">
-
-📞 Call
-
-</a>
-
-
-<a class="btn map"
-href="https://www.google.com/maps/search/?api=1&query=Goreakothi%2C%20Siwan%2C%20Bihar"
-target="_blank">
-
-📍 Google Maps
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="contact-card">
-
-<h3>
-🔐 Admin Panel
-</h3>
-
-<p>
-Private admin panel URL can be connected here
-after creating a secure backend.
-</p>
-
-<div class="contact-buttons">
-
-<a class="btn admin"
-href="#"
-onclick="adminMessage();return false;">
-
-Open Admin ↗
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+  <div class="welcome">
+    <h2>🙏 Welcome to Sonu Cyber</h2>
+    <p>अपनी जरूरत की सेवा चुनें और संबंधित वेबसाइट खोलें।</p>
+    <p class="notice">यह एक link directory है। आवेदन और भुगतान संबंधित आधिकारिक वेबसाइट पर होंगे।</p>
+  </div>
+
+  <h2>📂 All Service Categories</h2>
+  <div class="category-grid" id="categories"></div>
+  <div id="allSections"></div>
+  <div class="empty" id="empty">कोई सेवा नहीं मिली। दूसरा शब्द खोजें।</div>
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
-
-<div class="footer">
-
-<div>
-
-<strong>
-SONU DIGITAL SERVICE
-</strong>
-
-<p>
-Fast • Simple • Official Portal Access
-</p>
-
-</div>
-
-
-<div>
-
-<p>
-© 2026 Sonu Digital Service
-</p>
-
-</div>
-
-</div>
-
+  <b>SONU CYBER ONLINE SERVICE PORTAL</b><br>
+  Digital Services • Education • Government Portals<br>
+  सरकारी वेबसाइटों के लोगो और सेवाएँ उनके संबंधित विभागों के हैं।
+  <br>किसी निजी वेबसाइट पर दस्तावेज या भुगतान देने से पहले URL जाँचें।
 </footer>
 
-
-<button class="top"
-id="topButton"
-onclick="window.scrollTo({top:0,behavior:'smooth'})">
-
-↑
-
-</button>
-
-
 <script>
-
-/* MOBILE MENU */
-
-function toggleMenu(){
-
-const menu=document.getElementById("navMenu");
-
-menu.classList.toggle("open");
-
+const groups = [
+{
+ title:"Aadhaar Services", icon:"🪪", color:"#e0f2fe",
+ items:[
+  ["UIDAI Official Website","https://uidai.gov.in/"],
+  ["My Aadhaar Portal","https://myaadhaar.uidai.gov.in/"],
+  ["Aadhaar Download / Services","https://myaadhaar.uidai.gov.in/"],
+  ["Aadhaar Centre Information","https://uidai.gov.in/"],
+  ["Aadhaar Appointment / Update Info","https://uidai.gov.in/"]
+ ]
+},
+{
+ title:"PAN Card & Income Tax", icon:"💳", color:"#fce7f3",
+ items:[
+  ["Protean PAN Services","https://www.protean-tinpan.com/"],
+  ["Income Tax e-Filing","https://www.incometax.gov.in/"],
+  ["UTIITSL PAN Services","https://www.pan.utiitsl.com/"],
+  ["GST Portal","https://www.gst.gov.in/"]
+ ]
+},
+{
+ title:"Scholarship Services", icon:"🎓", color:"#dcfce7",
+ items:[
+  ["National Scholarship Portal (NSP)","https://scholarships.gov.in/"],
+  ["Bihar Post Matric Scholarship","https://pmsonline.bihar.gov.in/"],
+  ["Bihar MedhaSoft","https://medhasoft.bihar.gov.in/"],
+  ["Bihar e-Kalyan","https://ekalyan.bihar.gov.in/"],
+  ["PFMS Payment Status","https://pfms.nic.in/"],
+  ["Academic Bank of Credits (ABC)","https://www.abc.gov.in/"],
+  ["DigiLocker Documents","https://www.digilocker.gov.in/"]
+ ]
+},
+{
+ title:"Education & JPU University", icon:"📚", color:"#fef3c7",
+ items:[
+  ["JPU Official Website","https://www.jpv.ac.in/"],
+  ["JPU Admission Portal","https://jpvadm.samarth.edu.in/"],
+  ["JPU Notices & Exam Form Updates","https://www.jpv.ac.in/notification"],
+  ["JPU Results","https://www.jpv.ac.in/"],
+  ["JPU Syllabus","https://www.jpv.ac.in/"],
+  ["Bihar Board (BSEB)","https://biharboardonline.bihar.gov.in/"],
+  ["CBSE","https://www.cbse.gov.in/"],
+  ["IGNOU","https://www.ignou.ac.in/"],
+  ["OFSS Bihar Admission","https://ofssbihar.net/"],
+  ["NTA","https://nta.ac.in/"],
+  ["NIOS","https://nios.ac.in/"],
+  ["UGC","https://www.ugc.gov.in/"],
+  ["AICTE","https://www.aicte-india.org/"]
+ ]
+},
+{
+ title:"Bihar Government Services", icon:"🏛️", color:"#ede9fe",
+ items:[
+  ["Bihar RTPS / ServicePlus","https://serviceonline.bihar.gov.in/"],
+  ["Bihar Bhumi Land Records","https://biharbhumi.bihar.gov.in/"],
+  ["Bihar Ration Card (EPDS)","https://epds.bihar.gov.in/"],
+  ["Bihar Government Portal","https://state.bihar.gov.in/"],
+  ["Bihar Student Credit Card","https://www.7nishchay-yuvaupmission.bihar.gov.in/"],
+  ["South Bihar Electricity (SBPDCL)","https://www.sbpdcl.co.in/"],
+  ["North Bihar Electricity (NBPDCL)","https://www.nbpdcl.co.in/"],
+  ["Bihar Police","https://police.bihar.gov.in/"],
+  ["Bihar Labour Department","https://state.bihar.gov.in/labour/"],
+  ["Bihar e-Procurement","https://eproc2.bihar.gov.in/EPSV2Web/"]
+ ]
+},
+{
+ title:"Government Jobs & Recruitment", icon:"💼", color:"#ffedd5",
+ items:[
+  ["SSC","https://ssc.gov.in/"],
+  ["UPSC","https://www.upsc.gov.in/"],
+  ["BPSC","https://bpsc.bihar.gov.in/"],
+  ["BSSC","https://bssc.bihar.gov.in/"],
+  ["BTSC","https://btsc.bihar.gov.in/"],
+  ["Railway Recruitment Board","https://www.rrbcdg.gov.in/"],
+  ["India Post GDS Recruitment","https://indiapostgdsonline.gov.in/"],
+  ["National Career Service","https://www.ncs.gov.in/"],
+  ["Apprenticeship India","https://www.apprenticeshipindia.gov.in/"],
+  ["Skill India Digital","https://www.skillindiadigital.gov.in/"],
+  ["Indian Army Recruitment","https://joinindianarmy.nic.in/"],
+  ["Indian Navy Recruitment","https://www.joinindiannavy.gov.in/"],
+  ["Indian Air Force","https://indianairforce.nic.in/"]
+ ]
+},
+{
+ title:"Voter, Passport & Identity", icon:"🗳️", color:"#cffafe",
+ items:[
+  ["Voter Services","https://voters.eci.gov.in/"],
+  ["Election Commission of India","https://www.eci.gov.in/"],
+  ["Passport Seva","https://www.passportindia.gov.in/"],
+  ["DigiLocker","https://www.digilocker.gov.in/"],
+  ["UMANG","https://web.umang.gov.in/"],
+  ["CSC Digital Seva","https://digitalseva.csc.gov.in/"]
+ ]
+},
+{
+ title:"Railway, Travel & Transport", icon:"🚆", color:"#dbeafe",
+ items:[
+  ["IRCTC Train Booking","https://www.irctc.co.in/"],
+  ["Indian Railways","https://indianrailways.gov.in/"],
+  ["Parivahan Services","https://parivahan.gov.in/"],
+  ["Traffic e-Challan","https://echallan.parivahan.nic.in/"],
+  ["India Post","https://www.indiapost.gov.in/"]
+ ]
+},
+{
+ title:"Farmer & Rural Schemes", icon:"🌾", color:"#ecfccb",
+ items:[
+  ["PM Kisan","https://pmkisan.gov.in/"],
+  ["MGNREGA","https://nrega.nic.in/"],
+  ["PMAY-Gramin","https://pmayg.nic.in/"],
+  ["National Rural Livelihood Mission","https://nrlm.gov.in/"],
+  ["Jal Jeevan Mission","https://jaljeevanmission.gov.in/"],
+  ["National Food Security Portal","https://nfsa.gov.in/"]
+ ]
+},
+{
+ title:"Health, Labour & Pension", icon:"🏥", color:"#ffe4e6",
+ items:[
+  ["Ayushman Bharat Beneficiary","https://beneficiary.nha.gov.in/"],
+  ["e-Shram","https://eshram.gov.in/"],
+  ["EPFO","https://www.epfindia.gov.in/"],
+  ["National Social Assistance / Pension","https://nsap.nic.in/"],
+  ["Shram Suvidha","https://shramsuvidha.gov.in/"],
+  ["Birth & Death Registration","https://crsorgi.gov.in/"]
+ ]
+},
+{
+ title:"Business, GST & Registration", icon:"🏢", color:"#f3e8ff",
+ items:[
+  ["GST","https://www.gst.gov.in/"],
+  ["Udyam Registration","https://udyamregistration.gov.in/"],
+  ["MCA Company Services","https://www.mca.gov.in/"],
+  ["GeM Government Marketplace","https://gem.gov.in/"],
+  ["Startup India","https://www.startupindia.gov.in/"],
+  ["FSSAI FoSCoS","https://foscos.fssai.gov.in/"],
+  ["ICEGATE","https://www.icegate.gov.in/"],
+  ["RBI","https://www.rbi.org.in/"]
+ ]
+},
+{
+ title:"PDF, Photo & Design Tools", icon:"📄", color:"#f1f5f9",
+ items:[
+  ["PDF24 Tools","https://tools.pdf24.org/"],
+  ["iLovePDF","https://www.ilovepdf.com/"],
+  ["Smallpdf","https://smallpdf.com/"],
+  ["Canva Design","https://www.canva.com/"],
+  ["Remove Background","https://www.remove.bg/"],
+  ["Photopea Editor","https://www.photopea.com/"],
+  ["Google Drive","https://drive.google.com/"],
+  ["Google Translate","https://translate.google.com/"]
+ ]
+},
+{
+ title:"Legal, RTI & Complaints", icon:"⚖️", color:"#fef9c3",
+ items:[
+  ["eCourts","https://services.ecourts.gov.in/ecourtindia_v6/"],
+  ["RTI Online","https://rtionline.gov.in/"],
+  ["CPGRAMS Public Grievance","https://pgportal.gov.in/"],
+  ["National Consumer Helpline","https://consumerhelpline.gov.in/"],
+  ["India Government Services","https://services.india.gov.in/"],
+  ["National Portal of India","https://www.india.gov.in/"]
+ ]
 }
+];
 
+const categories = document.getElementById("categories");
+const allSections = document.getElementById("allSections");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty");
 
-/* SEARCH */
+groups.forEach((group, index) => {
+  const cat = document.createElement("button");
+  cat.className = "category";
+  cat.style.background = group.color;
+  cat.innerHTML = `<span class="emoji">${group.icon}</span>${group.title}`;
+  cat.onclick = () => {
+    document.getElementById("section-" + index)
+      .scrollIntoView({behavior:"smooth",block:"start"});
+  };
+  categories.appendChild(cat);
 
-const search=document.getElementById("search");
+  const section = document.createElement("section");
+  section.className = "section";
+  section.id = "section-" + index;
+  section.innerHTML =
+    `<h2 class="section-title"><span>${group.icon}</span>${group.title}</h2>`;
 
-search.addEventListener("input",function(){
+  const grid = document.createElement("div");
+  grid.className = "services";
 
-const value=this.value.toLowerCase();
+  group.items.forEach(([name, url]) => {
+    const card = document.createElement("article");
+    card.className = "service";
+    card.dataset.search = (name + " " + group.title).toLowerCase();
 
-const cards=document.querySelectorAll(".service");
+    const heading = document.createElement("h3");
+    heading.textContent = name;
 
-cards.forEach(function(card){
+    const desc = document.createElement("p");
+    desc.textContent = group.title;
 
-const text=card.innerText.toLowerCase();
+    const link = document.createElement("a");
+    link.className = "open";
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Open Website ↗";
 
-if(text.includes(value)){
+    card.append(heading, desc, link);
+    grid.appendChild(card);
+  });
 
-card.style.display="block";
-
-}else{
-
-card.style.display="none";
-
-}
-
+  section.appendChild(grid);
+  allSections.appendChild(section);
 });
 
+search.addEventListener("input", () => {
+  const query = search.value.trim().toLowerCase();
+  let total = 0;
+
+  document.querySelectorAll(".section").forEach(section => {
+    let count = 0;
+    section.querySelectorAll(".service").forEach(card => {
+      const show = card.dataset.search.includes(query);
+      card.style.display = show ? "flex" : "none";
+      if (show) count++;
+    });
+    section.style.display = count ? "block" : "none";
+    total += count;
+  });
+
+  categories.style.display = query ? "none" : "grid";
+  empty.style.display = total ? "none" : "block";
 });
-
-
-/* ADMIN */
-
-function adminMessage(){
-
-alert(
-"Admin Panel is not configured yet. Replace this button link with your private admin URL."
-);
-
-}
-
-
-/* TOP BUTTON */
-
-window.addEventListener("scroll",function(){
-
-const button=document.getElementById("topButton");
-
-if(window.scrollY>400){
-
-button.style.display="block";
-
-}else{
-
-button.style.display="none";
-
-}
-
-});
-
 </script>
-
 </body>
 </html>
